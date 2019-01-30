@@ -10,37 +10,82 @@
 <body>
 
 
-aharonov bohm experiment
-holonomy
-planet hopf
-Samadhi Movie
-psychonautiḱa
-dharma
-M. C. Esher
-taoismus
-shadow work
-neurolingvistické programování
-quantum field theory
-Alan Watts
-Terence Mckenna
-olberts paradox
-kopimism
-spiral dynamics
 
-Bladerunner
-Mr Robot
-Mr Nobody
-Cloud Atlas
-Rick and Morty
-Memento
-Fight Club
-Black Mirror
+<ul id="id00">
+<li>aharonov bohm experiment </li>
+<li>holonomy </li>
+<li>planet hopf </li>
+<li>Samadhi Movie </li>
+<li>psychonautiḱa </li>
+<li>dharma </li>
+<li>M. C. Esher </li>
+<li>taoismus </li>
+<li>shadow work </li>
+<li>neurolingvistické programování </li>
+<li>quantum field theory </li>
+<li>Alan Watts </li>
+<li>Terence Mckenna </li>
+<li>olberts paradox </li>
+<li>kopimism </li>
+<li>spiral dynamics </li>
+</ul>
+
+<ul id="id01">
+<li>Bladerunner </li>
+<li>Mr Robot </li>
+<li>Mr Nobody </li>
+<li>Cloud Atlas </li>
+<li>Rick and Morty </li>
+<li>Memento </li>
+<li>Fight Club </li>
+<li>Black Mirror </li>
+<li>Electric Dreams</li>
+</ul>
 
 
 
 
 
+<script>
+function sortList(id) {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById(id);
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    // Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      // start by saying there should be no switching:
+      shouldSwitch = false;
+      /* check if the next item should
+      switch place with the current item: */
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        /* if next item is alphabetically
+        lower than current item, mark as a switch
+        and break the loop: */
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark the switch as done: */
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
 
-  <!-- <script src="js/scripts.js"></script> -->
+let lists = ["id00" , "id01" ];
+
+for (i = 0; i < lists.length; i++){
+	sortList(lists[i]);	
+}
+
+</script>
 </body>
 </html>
