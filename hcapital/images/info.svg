@@ -1,0 +1,11 @@
+<svg viewBox="-1.000 -1.000 1026.000 1026.000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+	<g>
+		<title>Layer 1</title>
+		<g id="svg_info">
+			<path d="M576 736h-32v-286c0-0.336-0.096-0.656-0.096-1.008s0.096-0.656 0.096-0.992c0-17.664-14.336-32-32-32h-64c-17.664 0-32 14.336-32 32s14.336 32 32 32h32v256h-32c-17.664 0-32 14.336-32 32s14.336 32 32 32h128c17.664 0 32-14.336 32-32s-14.336-32-32-32zM512 352c35.344 0 64-28.656 64-64s-28.656-64-64-64-64 28.656-64 64 28.656 64 64 64zM512 0c-282.768 0-512 229.232-512 512 0 282.784 229.232 512 512 512 282.784 0 512-229.216 512-512 0-282.768-229.216-512-512-512zM512 961.008c-247.024 0-448-201.984-448-449.008s200.976-448 448-448 448 200.976 448 448-200.976 449.008-448 449.008z" id="path-1" fill="#1b1b1b" fill-rule="evenodd"/>
+		</g>
+	</g>
+	<script type="text/javascript">
+		<![CDATA[ var c=window.location.search.split('color=')[1]; c=parseInt(c,16); if(!isNaN(c)){c=c.toString(16);var p=document.getElementsByTagName('path');for(var i=0,l=p.length;i<l;i++){var s=p[i].style;s.fill='#'+c;}} ]]>
+	</script>
+</svg>
