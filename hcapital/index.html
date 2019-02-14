@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>HCapital</title>
+  <title>H|Capital</title>
   <meta name="description" content="Posláním fondu je shromažďovat a zhodnocovat finanční prostředky jednotlivých podílníků, kvalifikovaně a s přiměřeným rizikem je investovat na kapitálových trzích do dočasně podhodnocených, ale fundamentálně silných titulů s nejlepšími manažery a očekávaným vyšším růstem a tak dosahovat vyšší než průměrný výnos.">
   <link rel="stylesheet" href="styles.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="script.js"></script>
 <body>
 <div class="header-image"></div>
 <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -29,26 +29,28 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="#uvod">Úvod</a></li>
           <li><a href="#filozofie">Filozofie</a></li>
-          <li><a href="#">Online přehled</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="online-prehled.html">Online přehled</a></li>
         </ul>
       </div>
     </div>
 </nav>
 <div class="container"> 
   <div id="content">
-    <div id="header">
+    <div class="header">
       <div class="header-content">
         <h1>H|Capital</h1>
         <p class="motto">Nechte vaše peníze pracovat za vás.</p>
       </div>
     </div>
+    <a id="uvod"></a>
     <div class="section" data-aos="zoom-in-up">
       <p class="section-title">Posláním fondu</p>
       <p class="section-paragraph"> je shromažďovat a zhodnocovat finanční prostředky jednotlivých podílníků, kvalifikovaně a s přiměřeným rizikem je investovat na kapitálových trzích do dočasně podhodnocených, ale fundamentálně silných titulů s nejlepšími manažery a očekávaným vyšším růstem a tak dosahovat vyšší než průměrný výnos.</p>
     </div>
-    <a name="filozofie"></a>
+    <a id="filozofie"></a>
     <div id="gray" class="section gray" data-aos="zoom-in-up">
       <div class="container">
         <p class="section-title">Jednoduchá investiční filozofie</p>
@@ -57,7 +59,7 @@
         Um správně ocenit akcie, nám umožňuje kupovat atraktivní akcie výrazně levněji, než je jejich vnitřní hodnota. </p>
       </div>
     </div>
-    <a name="kontakt"></a>
+    <a id="kontakt"></a>
     <div class="section mt-450">
         <p class="section-title">Kontakt</p>
         <div class="conatiner">
@@ -78,52 +80,11 @@
           </div>
         </div>
       </div>
-        
-        <p class="section-paragraph"></p>
     </div>
     <div class="mid-image p-b-0"></div>
   </div>
 
 </div>
-
-<script>
-
-
-$(document).ready(function(){
-  var scrollTop = 0;
-  $(window).scroll(function(){
-    scrollTop = $(window).scrollTop();
-     $('.counter').html(scrollTop);
-    
-    if (scrollTop >= 200) {
-      $('#navbar').addClass('scrolled-nav');
-    } else if (scrollTop < 200) {
-      $('#navbar').removeClass('scrolled-nav');
-    } 
-    
-  }); 
-  
-});
-AOS.init();
-</script>
-<!--
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var header = document.getElementById("content");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-    header.classList.add("sticky_content");
-  } else {
-    navbar.classList.remove("sticky");
-    header.classList.remove("sticky_content");
-  }
-}
-</script>
--->
+<script>AOS.init();</script>
 </body>
 </html>
