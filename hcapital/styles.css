@@ -61,6 +61,10 @@ body {
     width: 23px;
 }
 
+.last-child {
+    margin-left: 20px;
+}
+
 .scrolled-nav .navbar-brand img{
     width: 20px;
     padding-top:7px;
@@ -68,11 +72,6 @@ body {
 
 .scrolled-nav.navbar-brand {
     padding: 5px;
-}
-
-ul.nav:last-child {
-    padding-left: 30px;
-    color: black;
 }
 
 .navbar-default {
@@ -357,7 +356,11 @@ iframe {
         padding: 0;
     }
 }
-
+@media only screen and (max-width: 767px ) {
+    .last-child {
+        margin-left: 0;
+    }
+}
 @media only screen and (max-width: 600px ) {
     .container {
         width: 500px;
