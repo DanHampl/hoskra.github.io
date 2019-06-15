@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Font1";
+  src: url("fonts/l1");
+}
+
+@font-face {
+  font-family: "Font2";
+  src: url("fonts/SueEllenFrancisco.ttf");
+}
+body {
+  background-color: #947e03 !important;
+  margin: 0;
+  font-family: "Nunito", sans-serif !important;
+  font-size: 19px !important;
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url(images/947e03.jpg);
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.container {
+  padding: 0 40px !important;
+  background-color: white;
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  height: 470px;
+}
+
+#header .container {
+  background-color: rgba(255, 255, 255, 0.56);
+}
+
+.container.no-color {
+  background-color: transparent !important;
+}
+
+.image-wrapper {
+  border: 2px solid white;
+  position: relative;
+  bottom: -30px;
+}
+
+.image-wrapper img {
+  padding-top: 60px;
+  height: 400px;
+}
+
+.header-fill {
+  position: relative;
+  width: 400px;
+  height: 363px;
+}
+
+#header img {
+  padding-top: 50px;
+}
+
+ul {
+  padding-right: 40px;
+}
+
+.caption {
+  padding: 20px 0;
+}
+
+.space {
+  content: "";
+  height: 50px;
+  display: block;
+  width: 100%;
+}
+
+.space.bigger-space {
+  height: 300px;
+}
+
+.container.gray {
+  background-color: #e8e8e8 !important;
+}
+
+@media only screen and (max-width: 992px) {
+  #header img {
+    padding-top: 40px;
+  }
+  .image-wrapper img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 320px;
+  }
+
+  .image-wrapper {
+    padding-bottom: 90px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header-fill {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .container {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .image-wrapper {
+    border: none;
+  }
+  .container {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+}
