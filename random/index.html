@@ -43,6 +43,10 @@
     height: 200px;
   }
 
+  a:visited{
+    color: blue;
+  }
+
   .highlight{
     background-color: #9fffea;
   }
@@ -325,10 +329,39 @@ function sortList(id) {
   }
 }
 
-let lists = ["id00" , "id01" , "id02", "id03" ];
+let lists = ["id00"];
 
 for (i = 0; i < lists.length; i++){
 	sortList(lists[i]);	
+}
+
+function search(what){
+  var words = what.split(" ");
+  let all;
+  for (let i = 0; i < words.length; i++){
+    all += words[i] + "+";
+  }
+  all = all.replace("undefined","");
+
+  let url = "https://www.google.com/search?q=" + all;
+  console.log(url);
+  
+  return url;
+}
+
+
+let dl = document.getElementById("id00");
+let dt = dl.getElementsByTagName("dt");
+
+for (let x of dt){
+  var a = document.createElement("a");
+  what = x.innerHTML;
+  a.innerHTML = " [↗]";
+  a.setAttribute("style", "text-decoration:none; background-color: transparent ");
+  a.setAttribute('target', "_blank");
+  a.setAttribute('href',search(what));
+  x.appendChild(a);
+
 }
 
 </script>
