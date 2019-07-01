@@ -1,0 +1,259 @@
+@font-face {
+    font-family: "Font1";
+    src: url("../font/l1");
+}
+  
+@font-face {
+    font-family: "Font2";
+    src: url("../font/SueEllenFrancisco.ttf");
+}
+
+*{
+    font-family: "Nunito", sans-serif !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header{
+    padding-top: 90px;
+    height: 650px;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(0deg,rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url(../img/0027.jpg);
+}
+
+.header-image-container{
+    border: 2px solid white;
+    height: 90%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.th{
+    height: 55px;
+}
+
+.navbar-collapse{
+    padding-right: 10px;
+}
+
+.navbar-toggler{
+    border: none !important;
+    padding-right: 20px !important;    
+}
+
+.header-image{   
+    height: 400px;
+}
+
+.navbar{
+    padding: 0;
+}
+
+.bg-light{
+    background-color: transparent !important;
+}
+
+.navbar-brand{
+    color: white !important;    
+    padding: 20px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .custom-toggler.navbar-toggler {
+    border-color: white;
+  } 
+
+.nav-item{
+    padding: 10px;
+}
+.nav-link{
+    color: white !important;    
+    font-size: 25px;
+    font-family: "Font2", sans-serif !important;
+    text-transform: uppercase;
+}
+
+.show .nav-link{
+    padding-left: 20px;
+}
+
+.bg-light .container{
+    background-color: #4e4844;
+    color: white !important;
+}
+
+.block{
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.gray{
+    background-color: #c4c2c2;
+}
+
+.white{
+    background-color: #e0dcdc;
+}
+
+.frame{
+    border: 2px solid white;
+    height: 90%;
+    width: 95%;
+}
+
+.photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+}
+
+.first-photo{
+    background-image: linear-gradient(0deg,rgba(133, 132, 131,0.5),
+    rgba(133, 132, 131,0.5)), url(../img/0024.jpg);
+    height: 450px;
+}
+
+.second-photo{
+    background-image: linear-gradient(0deg,rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(../img/0007.jpg);
+    height: 450px;
+}
+
+.mid-text{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 8px #4e4844;
+}
+
+.text-frame{
+    background-color: #4e4844;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.images-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.images-item{
+    height: 200px;
+    padding: 15px;
+}
+
+.headline{
+    font-size: 35px;
+    padding: 10px;
+    font-weight: 900;
+}
+
+h2{
+    position: relative;
+}
+
+h2 span{
+    position: absolute; top: -110px;
+}
+
+.caption{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.simple-text{
+    padding: 10px;
+    margin: 0;
+}
+
+.contact{
+    padding: 60px 0;
+    width: 40%;
+    list-style: none !important;    
+}
+
+ul{
+    margin: 16px 0;
+}
+
+.frames-container{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.frame-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+.contact-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+    padding-bottom: 20px;
+}
+
+.contact img{
+    width: 40px;
+    padding-right: 8px;
+}
+
+
+
+.contact-photo{
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgb(78, 72, 68, 1)
+    ,rgb(78, 72, 68, 0.8)), url(../img/0007.jpg);
+}
+
+.contact ul{
+    margin: 0;
+    padding: 0;
+}
+
+.white-font{
+    color: white !important;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-image{   
+        height: 300px;
+    }
+    .contact{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .frame-container{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .header-image{   
+        height: 200px;
+    }
+    .header{
+        height: 450px;
+    }
+}
