@@ -21,7 +21,8 @@ html {
     height: 650px;
     width: 100%;
     margin: 0;
-    background: linear-gradient(0deg,rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url(../img/0027.jpg);
+    background: linear-gradient(0deg,rgba(255,255,255,0.6),
+    rgba(255,255,255,0.6)), url(../img/header.jpg);
 }
 
 .header-image-container{
@@ -29,7 +30,7 @@ html {
     height: 90%;
     width: 95%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -48,6 +49,7 @@ html {
 
 .header-image{   
     height: 400px;
+    padding-left: 50px;
 }
 
 .navbar{
@@ -237,9 +239,13 @@ ul{
 @media only screen and (max-width: 600px) {
     .header-image{   
         height: 300px;
+        padding: 0;
     }
     .contact{
         width: 100%;
+    }
+    .header-image-container{
+        justify-content: center;
     }
 }
 
