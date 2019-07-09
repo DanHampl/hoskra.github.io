@@ -30,7 +30,15 @@ html {
     height: 90%;
     width: 95%;
     display: flex;
-    /* justify-content: center; */
+    align-items: center;
+}
+
+.image-container{
+    border: 2px solid white;
+    height: 90%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
