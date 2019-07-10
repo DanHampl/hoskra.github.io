@@ -16,13 +16,18 @@ html {
     scroll-behavior: smooth;
 }
 
+.space{
+    content:"";
+    width:100%;
+    height: 90px;
+}
+
 .header{
-    padding-top: 90px;
     height: 650px;
     width: 100%;
     margin: 0;
-    background: linear-gradient(0deg,rgba(255,255,255,0.6),
-    rgba(255,255,255,0.6)), url(../img/header.jpg);
+    background: linear-gradient(90deg,rgba(255,255,255,0.7),
+    rgba(255,255,255,0.5)), url(../img/0015_fliped.jpg);
 }
 
 .header-image-container{
@@ -68,6 +73,10 @@ html {
     background-color: transparent !important;
 }
 
+.bg-light .container{
+    box-shadow: 8px 8px 29px rgba(0,0,0,0.3);
+}
+
 .navbar-brand{
     color: white !important;    
     padding: 20px;
@@ -96,7 +105,7 @@ html {
 }
 
 .bg-light .container{
-    background-color: #4e4844;
+    background-color: #5d4333;
     color: white !important;
 }
 
@@ -124,13 +133,13 @@ html {
     justify-content: center;
     align-items: center;
     background-position-x: center;
-    background-position-y: center;
+    background-position-y: top;
     background-size: cover;
 }
 
 .first-photo{
     background-image: linear-gradient(0deg,rgba(133, 132, 131,0.5),
-    rgba(133, 132, 131,0.5)), url(../img/0024.jpg);
+    rgba(133, 132, 131,0.5)), url(../img/0004.jpg);
     height: 450px;
 }
 
@@ -143,11 +152,11 @@ html {
     text-align: center;
     color: white;
     font-size: 20px;
-    text-shadow: 2px 2px 8px #4e4844;
+    text-shadow: 2px 2px 8px #5d4333;
 }
 
 .text-frame{
-    background-color: #4e4844;
+    background-color: #5d4333;
     color: white;
     padding: 10px;
     margin: 10px;
@@ -230,8 +239,9 @@ ul{
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    background-image: linear-gradient(0deg, rgb(78, 72, 68, 1)
-    ,rgb(78, 72, 68, 0.8)), url(../img/0007.jpg);
+    background-color: #5d4333;
+    /* background-image: linear-gradient(0deg, rgb(78, 72, 68, 1)
+    ,rgb(78, 72, 68, 0.9)), url(../img/0007.jpg); */
 }
 
 .contact ul{
