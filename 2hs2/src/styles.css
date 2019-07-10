@@ -269,6 +269,10 @@ ul{
 }
 
 @media only screen and (max-width: 500px) {
+    .header{
+        height: 330px;
+    }
+
     .frame-container{
         width: 100%;
     }
