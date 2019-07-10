@@ -240,8 +240,6 @@ ul{
     background-position-y: center;
     background-size: cover;
     background-color: #5d4333;
-    /* background-image: linear-gradient(0deg, rgb(78, 72, 68, 1)
-    ,rgb(78, 72, 68, 0.9)), url(../img/0007.jpg); */
 }
 
 .contact ul{
@@ -255,6 +253,9 @@ ul{
 }
 
 @media only screen and (max-width: 600px) {
+    .header{
+        height: 450px;
+    }
     .header-image{   
         height: 300px;
         padding: 0;
@@ -271,6 +272,17 @@ ul{
     .frame-container{
         width: 100%;
     }
+
+    .header{
+        background: linear-gradient(90deg,rgba(255,255,255,0.7),
+        rgba(255,255,255,0.5)), url(../img/0015_fliped_cropped.jpg);
+    }
+    
+    .photo{
+        background-position-x: center;
+        background-position-y: center;
+    }
+
 }
 
 @media only screen and (max-width: 350px) {
