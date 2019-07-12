@@ -287,8 +287,6 @@ ul{
     padding-right: 8px;
 }
 
-
-
 .contact-photo{
     background-position-x: center;
     background-position-y: center;
@@ -299,6 +297,10 @@ ul{
 .contact ul{
     margin: 0;
     padding: 0;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 .white-font{
