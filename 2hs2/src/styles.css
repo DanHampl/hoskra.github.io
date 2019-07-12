@@ -128,6 +128,49 @@ html {
     width: 95%;
 }
 
+.horse-name{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pluto{
+    padding-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+.pluto dd{
+    width: 70%;
+    float: left;
+}
+
+.pluto dt{
+    width: 20%;
+    float: left;
+}
+
+.prip-wrapper{
+    display: flex;
+    padding-left: 10px;
+}
+
+.prip{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prip-img{
+    width: 50%;
+}
+
+.prip img{
+    padding: 10px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .photo{
     display: flex;
     justify-content: center;
@@ -138,8 +181,9 @@ html {
 }
 
 .first-photo{
+    background-position-y: center;
     background-image: linear-gradient(0deg,rgba(133, 132, 131,0.5),
-    rgba(133, 132, 131,0.5)), url(../img/0004.jpg);
+    rgba(133, 132, 131,0.5)), url(../img/0023.jpg);
     height: 450px;
 }
 
@@ -189,7 +233,7 @@ h2 span{
 .caption{
     padding: 10px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     margin: 10px 0;
 }
 
