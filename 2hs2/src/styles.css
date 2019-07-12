@@ -128,31 +128,38 @@ html {
     width: 95%;
 }
 
+.smaller-width{
+    width: 45%;
+}
+
 .horse-name{
-    padding-left: 10px;
     font-size: 20px;
     font-weight: bold;
 }
 
 .pluto{
-    padding-top: 10px;
     display: block;
-    width: 100%;
+    width: 40%;
+}
+
+.pluto dl{
+    margin-bottom: 0;
 }
 
 .pluto dd{
-    width: 70%;
+    width: 60%;
     float: left;
 }
 
 .pluto dt{
-    width: 20%;
+    width: 30%;
     float: left;
 }
 
 .prip-wrapper{
+    padding-top: 10px;
     display: flex;
-    padding-left: 10px;
+    flex-wrap: wrap;
 }
 
 .prip{
@@ -242,6 +249,9 @@ h2 span{
     margin: 0;
 }
 
+dl{
+    margin-bottom: 0;
+}
 .contact{
     padding: 60px 0;
     width: 40%;
@@ -296,6 +306,16 @@ ul{
     text-align: center;
 }
 
+@media only screen and (max-width: 768px) {
+    .prip-img{
+        width: 100%;
+    }
+
+    .pluto{
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .header{
         height: 450px;
@@ -310,6 +330,8 @@ ul{
     .header-image-container{
         justify-content: center;
     }
+
+
 }
 
 @media only screen and (max-width: 500px) {
