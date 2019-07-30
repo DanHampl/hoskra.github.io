@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>hoskra</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  <style>
+  *{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    background-color: #111111;
+  }
+  </style>
+</head>
+<body>
+
+
+
+Current - scale of the Universe: https://scaleofuniverse.com
+
+https://historysearch.com
+
+https://www.blinkist.com
+
+https://mluvtecesky.net/cs/introduction/country_language/history
+
+https://www.rozhlas.cz/toulky/portal/
+
+https://cs.wikipedia.org/wiki/Dějiny_Česka
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function sortList(id) {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById(id);
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByTagName("div");
+    // Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      // start by saying there should be no switching:
+      shouldSwitch = false;
+      /* check if the next item should
+      switch place with the current item: */
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        /* if next item is alphabetically
+        lower than current item, mark as a switch
+        and break the loop: */
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark the switch as done: */
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+
+let lists = ["id00"];
+
+</script>
+</body>
+</html>
