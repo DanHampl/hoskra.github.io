@@ -1,0 +1,16 @@
+transparent_black = "rgba(0,0,0,0)";
+transparent_navy = "rgba(0,0,128,0)";
+transparent_blue = "rgba(0,0,255,0)";
+transparent_green = "rgba(0,128,0,0)";
+transparent_teal = "rgba(0,128,128,0)";
+transparent_lime = "rgba(0,255,0,0)";
+transparent_aqua = "rgba(0,255,255,0)";
+transparent_maroon = "rgba(128,0,0,0)";
+transparent_purple = "rgba(128,0,128,0)";
+transparent_olive = "rgba(128,128,0,0)";
+transparent_gray = "rgba(128,128,128,0)";
+transparent_silver = "rgba(192,192,192,0)";
+transparent_red = "rgba(255,0,0,0)";
+transparent_fuchsia = "rgba(255,0,255,0)";
+transparent_yellow = "rgba(255,255,0,0)";
+transparent_white = "rgba(255,255,255,0)";

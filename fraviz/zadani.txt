@@ -1,0 +1,17 @@
+analyza soucasneho stavu API SAGE2 
+reserse knihoven na grafiku
+reserse ktere fraktalovite utvary by mohly byt pouzity, ktere se daji dobre parametrizovat
+analyza soucasnych reseni 
+
+
+
+
+Název: Fraktální audio vizualizér na SAGE2
+
+Cílem bakalářské práce je analýza použití fraktálních útvarů na vizualizaci matematických dat, získaných fourierovou transformací na platformu SAGE2.
+
+1) Seznámení se stávajícím SAGE2 API a jeho možnostmi
+2) Analýza toho, jaká data je relevantní vizualizovat. Předpokladem může být určitý hudební styl
+3) Rešerše druhů fraktálů pro použití ve vizualizaci
+4) Zamyšlení nad použitím knihovny v souladu s poznatkami z bodu 1)
+5) Základní implementace podle závěrů z předchozích bodů
