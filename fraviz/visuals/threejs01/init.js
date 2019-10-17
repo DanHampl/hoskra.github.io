@@ -131,7 +131,7 @@ function onWindowResize() {
 }
 function animate() {
     requestAnimationFrame( animate );
-    camera.position.z += Number(selectedValue);
+    camera.position.z -= Number(selectedValue);
     if (WIERD_CAMERA){
         if (cameraRotationX){
             camera.rotation.x += 0.001*(selectedValue/10);
@@ -160,8 +160,8 @@ function animate() {
         }
     }
 
-    if(camera.position.z > 1000){
-        camera.position.z = -1000;
+    if(camera.position.z < -1000){
+        camera.position.z = 1000;
     }
     renderer.render( scene, camera );
 }
