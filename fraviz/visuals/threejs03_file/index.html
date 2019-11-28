@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  <!-- <link rel="stylesheet" href="/src/styles.css"> -->
+  <style>
+  body {
+    margin: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <button id="resume">resume</button>
+  <a href="../threejs03">switch input</a>
+
+  speed:
+  <select id="dropdown">
+      <option value="2">2</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+  wierd camera?
+    <input id="wierd_camera" type="checkbox">
+  <div id="container"></div>
+  <button id="default">RESET</button>
+  plane color:
+  <select id="plane_color">
+    <option style="background-color: gray; color: white" value="white">white</option>
+    <option style="background-color: gray; color: yellow" value="yellow">yellow</option>
+    <option style="background-color: gray; color: cyan" value="cyan">cyan</option>
+    <option style="background-color: gray; color: magenta" value="magenta">magenta</option>
+    <option style="background-color: gray; color: blue" value="blue">blue</option>
+    <option style="background-color: gray; color: red" value="red">red</option>
+    <option style="background-color: gray; color: green" value="green">green</option>
+    <option style="background-color: gray; color: black" value="black">black</option>
+  </select>
+  background color:
+  <select id="background_color">
+    <option style="background-color: gray; color: white" value="white">white</option>
+    <option style="background-color: gray; color: yellow" value="yellow">yellow</option>
+    <option style="background-color: gray; color: cyan" value="cyan">cyan</option>
+    <option style="background-color: gray; color: magenta" value="magenta">magenta</option>
+    <option style="background-color: gray; color: blue" value="blue">blue</option>
+    <option style="background-color: gray; color: red" value="red">red</option>
+    <option style="background-color: gray; color: green" value="green">green</option>
+    <option style="background-color: gray; color: black" value="black">black</option>
+  </select>
+  grid color:
+  <select id="grid_color">
+    <option style="background-color: gray; color: white" value="white">white</option>
+    <option style="background-color: gray; color: yellow" value="yellow">yellow</option>
+    <option style="background-color: gray; color: cyan" value="cyan">cyan</option>
+    <option style="background-color: gray; color: magenta" value="magenta">magenta</option>
+    <option style="background-color: gray; color: blue" value="blue">blue</option>
+    <option style="background-color: gray; color: red" value="red">red</option>
+    <option style="background-color: gray; color: green" value="green">green</option>
+    <option style="background-color: gray; color: black" value="black">black</option>
+  </select>
+
+  <button id="camera">switch camera</button>
+</body>
+<script defer src="../threejs03/three.js"></script>
+<script defer src="../threejs03/grid.js"></script>
+<script defer src="mic.js"></script>
+<script defer src="../threejs03/creative_coding.js"></script>
+<script defer src="../threejs03/init.js"></script>
+</html>

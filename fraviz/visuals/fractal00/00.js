@@ -61,14 +61,11 @@ function generate() {
 
 $(document).ready(() => {
     display = $("#display");
-    display = $("#canvas");
+    canvas = $("#canvas1");
     $("#generate").on("click", () => {
         generate();
     })
 
-    generate();
-    generate();
-    generate();
     generate();
     generate();
     generate();

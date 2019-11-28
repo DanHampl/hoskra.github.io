@@ -11,6 +11,16 @@
 <br/>
 <br/>
 <button id="resume">resume</button>
+<select id="dropdown">
+  <option value="1">one circle</option>
+  <option value="2">3 circles</option>
+  <option value="3">spectrum</option>
+  <option value="4">balls</option>
+  <option value="5"></option>
+  <option value="6"></option>
+  <option value="7"></option>
+</select>
+
 </body>
 
 <script src="creative_coding.js"></script>
@@ -18,26 +28,123 @@
 <script src="canvas.js"></script>
 <script>
 
-  let idk = document.getElementById("idk");
-  // idk.addEventListener("click",() => {
+var ctx = createCanvas("canvas1");
 
-    var ctx = createCanvas("canvas1");
+let selectedValue = 1;
 
-    ctx.fillStyle="#e2e2e2";
+//balls
+var balls = [];
 
-    function draw(){
+document.getElementById("dropdown").addEventListener("change", () => {
+      ctx.clearRect(0,0,w,h);
+      selectedValue = document.getElementById("dropdown").value;
+})
+
+function draw(){
+
+
+  switch (selectedValue) {
+    case "1":
 
       var s = Mic.getVolume();
-      console.log(s);
-      //console.log(s);
       ctx.fillStyle = hsl(s, 30, 50);
       ctx.fillStyle = rgb(s*2);
       ctx.HfillEllipse(w/2, h/2, s*5, s*5);
+      break;
+    case "2":
+
+      if (chance(20)) ctx.background(235);
+        var s = Mic.getBassVol(10, 255);
+        ctx.fillStyle = rgb(s);
+        ctx.HfillEllipse(w/4, h/2, s, s);
+
+        var s = Mic.getMidsVol(10, 255);
+        ctx.fillStyle = rgb(s);
+        ctx.HfillEllipse(w/2, h/2, s, s);
+
+        var s = Mic.getHighsVol(10, 255);
+
+        ctx.fillStyle = rgb(s);
+        ctx.HfillEllipse(w - w/4, h/2, s, s);
+      break;
+
+    case "3":
+    var grid = new Grid(200, 1);
+
+      ctx.clearRect(0,0,w,h);
+      for (var i = 0; i < grid.length; i++) {
+        // Mic.mapSound(_me, _total, _min, _max)
+        var s = Mic.mapRawSound(i, grid.length, 10, h/4);
+        ctx.fillStyle = rgb(0);
+        ctx.fillRect(grid.x[i], grid.y[i] - s/2, grid.spacing_x-0.5, s);
+      }
+      break;
+    case 4:
+    var gw = 30;
+      var gh = 30;
+      var grid = new Grid(gw, gh);
+      ctx.lineWidth = 0.2;
+     
+      var number_of_balls = gw * gh;
+      for (var i = 0; i < number_of_balls; i++) {
+        addBall(grid.x[i], grid.y[i], i);
+      }
+      ctx.background(235);
+        for (var i = 0; i < balls.length; i++) {
+          var b = balls[i];
+          moveBall(b);
+          drawBall(b);
+        }
+    break;
+    default:
+      if (chance(20)) ctx.background(235);
+      var s = Mic.getBassVol(10, 255);
+      ctx.fillStyle = rgb(s);
+      ctx.HfillEllipse(w/4, h/2, s, s);
+
+      var s = Mic.getMidsVol(10, 255);
+      ctx.fillStyle = rgb(s);
+      ctx.HfillEllipse(w/2, h/2, s, s);
+
+      var s = Mic.getHighsVol(10, 255);
+
+      ctx.fillStyle = rgb(s);
+      ctx.HfillEllipse(w - w/4, h/2, s, s);
+  }
+
+
+
+}
+
+function addBall(x, y, i){
+  var ball = {
+    x: x,
+    y: y,
+    sz: 10,
+    me: i
+  }
+  balls.push(ball);
+}
+function moveBall(b){
+    var m = Math.round(Mic.spectrum.length/2);
+    if(m > 0) {
+      var s = map(Mic.spectrum[b.me%(m-1)], 0, 255, 4, grid.spacing_x - 2);
+      b.sz = tween(b.sz, s, 2);
     }
+    b.y +=2;
+    if( b.y > h) b.y = 0;
+}
 
-    draw();
 
-  // });
+function drawBall(b){
+    ctx.fillStyle = "black";
+    ctx.fillRect(b.x, b.y, b.sz, grid.spacing_y - 2);
+
+}
+
+
+draw();
+
 
   </script>
 
