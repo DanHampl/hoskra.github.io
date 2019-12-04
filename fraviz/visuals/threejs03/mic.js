@@ -1,10 +1,12 @@
-let MICROPHONE = true;
+let MICROPHONE;
+
+MICROPHONE = true;
 
 var audioContext;
 var input, context, stream;
 
 //////
-let path = "human_activity.mp3"
+let path = "/music/human_activity.mp3"
 let audio = new Audio(path);
 
 
@@ -293,11 +295,13 @@ function mapFreq(i){
 
 document.getElementById("resume").addEventListener("click", () => {
   audioContext.resume();
-  console.log("resumed");
+  console.log("resumed  ");
+
 });
 
 return this;
 
 }
+
 
 var Mic = new Microphone();

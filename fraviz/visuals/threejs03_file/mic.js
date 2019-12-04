@@ -1,10 +1,10 @@
-let MICROPHONE = true;
+let MICROPHONE = false;
 
 var audioContext;
 var input, context, stream;
 
 //////
-let path = "human_activity.mp3"
+let path = "../../music/human_activity.mp3"
 let audio = new Audio(path);
 
 
@@ -83,6 +83,8 @@ function Microphone (_fft) {
           input = context.createMediaStreamSource(stream);
         } else {
           var input = context.createMediaElementSource(audio);
+          audio.play();
+          console.log(audio);
           playAudio();
         }
 
@@ -294,6 +296,8 @@ function mapFreq(i){
 document.getElementById("resume").addEventListener("click", () => {
   audioContext.resume();
   console.log("resumed");
+  console.log("resumed and played");
+  playAudio();
 });
 
 return this;

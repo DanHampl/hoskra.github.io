@@ -2,32 +2,46 @@ var scene, camera, renderer, exporter, mesh, grid, cameraRotationX, cameraRotati
 var PLANE_SIZE = 10000;
 
 // DEFAULT VALUES
-let BACKGROUND_COLOR = 0x26ccff;
+let BACKGROUND_COLOR = 0x000000;
 let PLANE_COLOR = 0x000000;
-let GRID_COLOR = 0xa0a000;
+let GRID_COLOR = 0x00ffff;
 let selectedValue = 10;
 let WIERD_CAMERA = false
 let MOVING_CAMERA = true;
 
-var redMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000, side: THREE.DoubleSide } );
-var blueMaterial = new THREE.MeshPhongMaterial( { color: 0x0000ff, side: THREE.DoubleSide } );
+var redMaterial = new THREE.MeshPhongMaterial( { color: 0x0007db, side: THREE.DoubleSide } );
+var blueMaterial = new THREE.MeshPhongMaterial( { color: 0xf500ed, side: THREE.DoubleSide } );
 var whiteMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, side: THREE.DoubleSide } );
+var volumeMaterial = new THREE.MeshPhongMaterial( { color: 0x00ffff, side: THREE.DoubleSide } );
 
 let bassObjects = []
 let midObjects = []
 let highObjects = []
+let volumeObject;
 
-
-
+let MAX_BASS = 2500;
+let MAX_MID = 750;
+let MAX_HIGH = 200;
 
 var bass, mid, high;
 function draw() {
+
     bass = Mic.getBassVol(10, 255);
     mid = Mic.getMidsVol(10, 255);
     high = Mic.getHighsVol(10, 255);
-    vol = Mic.getVolume();
+    bass = bass;
+    mid = mid;
+    high = high;
 
-        // console.log(vol);
+    bass = bass > MAX_BASS ? MAX_BASS : bass;
+    mid = mid > MAX_MID ? MAX_MID : mid;
+    high = high > MAX_HIGH ? MAX_HIGH : high;
+
+    vol = Mic.getVolume() * 10;
+
+    // console.log(bass + " " + mid + " " + high);
+    // console.log(vol);
+    let camZ = camera.position.z;
 
     bassObjects.forEach(x => scene.remove(x));
     midObjects.forEach(x => scene.remove(x));
@@ -36,59 +50,54 @@ function draw() {
     midObjects = []
     highObjects = []
 
-    object = new THREE.Mesh( new THREE.SphereBufferGeometry( bass ), redMaterial );
-    object.position.set( -100, 200, -2000 );
+    // volume
+    scene.remove(volumeObject);
+    volumeObject = new THREE.Mesh( new THREE.BoxBufferGeometry( vol, 1, 100000 ), volumeMaterial );
+    volumeObject.position.set( -100, 0, 0);
+    scene.add( volumeObject );
+
+    // RED BASS
+    object = new THREE.Mesh( new THREE.SphereBufferGeometry( bass, 1, 1 ), redMaterial );
+    object.position.set( -100, 0, -3000 + camZ);
     scene.add( object );
     bassObjects.push(object);
 
-    // right
-    object = new THREE.Mesh( new THREE.SphereBufferGeometry( mid ), blueMaterial );
-    object.position.set( 600, 0, -1500 );
+    // BLUE right
+    object = new THREE.Mesh( new THREE.SphereBufferGeometry( mid, 2, 2), blueMaterial );
+    object.position.set( 600, 0, -1500 + camZ);
     scene.add( object );
     midObjects.push(object);
-    // left
-    object = new THREE.Mesh( new THREE.SphereBufferGeometry( mid ), blueMaterial );
-    object.position.set( -800, 0, -1500 );
+    // BLUE left
+    object = new THREE.Mesh( new THREE.SphereBufferGeometry( mid, 2, 2), blueMaterial );
+    object.position.set( -800, 0, -1500 + camZ);
     scene.add( object );
     midObjects.push(object);
 
-    object = new THREE.Mesh( new THREE.SphereBufferGeometry( high ), whiteMaterial );
-    object.position.set( -400, 0, -1000 );
+    // WHITE HIGHS
+    object = new THREE.Mesh( new THREE.SphereBufferGeometry( high, 2, 2), whiteMaterial );
+    object.position.set( -200, 0, -1000 + camZ);
     scene.add( object );
     highObjects.push(object);
 
-    object = new THREE.Mesh( new THREE.SphereBufferGeometry( high ), whiteMaterial );
-    object.position.set( 200, 0, -500 );
+    object = new THREE.Mesh( new THREE.SphereBufferGeometry( high, 2, 2), whiteMaterial );
+    object.position.set( 200, 0, -500 + camZ);
     scene.add( object );
     highObjects.push(object);
 
-    object = new THREE.Mesh( new THREE.SphereBufferGeometry( high ), whiteMaterial );
-    object.position.set( -400, 0, 0 );
+    object = new THREE.Mesh( new THREE.SphereBufferGeometry( high, 2, 2), whiteMaterial );
+    object.position.set( -400, 0, -400 + camZ);
     scene.add( object )
     highObjects.push(object);
 }
 
-
-
-function updateBass() {
-
-}
-
-function updateMid(mid) {
-    // for(let i = 0; i < midObjects.length; i++) {
-    //     scene.remove(midObjects[i]);
-    //     let position = midObjects[i].position;
-    //     object = new THREE.Mesh( new THREE.SphereBufferGeometry( mid ), blueMaterial );
-    //     object.position.set(position);
-    //     scene.add(object);
-    // }
-}
-
-function updateHigh() {
-
-}
-
+// ( right, up, front )
+// (x, y, z)
 function createObjects() {
+    // volume
+    volumeObject = new THREE.Mesh( new THREE.BoxBufferGeometry( 10, 1, 100000 ), volumeMaterial );
+    volumeObject.position.set( -100, 0, 0 );
+    scene.add( volumeObject );
+
     // center red
     object = new THREE.Mesh( new THREE.SphereBufferGeometry( 500 ), redMaterial );
     object.position.set( -100, 200, -2000 );
@@ -133,49 +142,49 @@ animate(selectedValue, WIERD_CAMERA);
 
 function init() {
     // EVENT LISTENERS
-    document.getElementById("default").addEventListener("click", () => {
-        BACKGROUND_COLOR = 0x26ccff;
-        PLANE_COLOR = 0x000000;
-        GRID_COLOR = 0xa0a000;
-        ground.material.color.set(PLANE_COLOR);
-        scene.fog = new THREE.Fog( BACKGROUND_COLOR, 600, 1000 );
-        scene.background = new THREE.Color( BACKGROUND_COLOR );
-        scene.remove(grid);
-        grid = new THREE.GridHelper( 10000, 100, BACKGROUND_COLOR, BACKGROUND_COLOR );
-        grid.material.opacity = 1;
-        grid.material.transparent = true;
-        scene.add( grid );
-        selectedValue = 2;
-        WIERD_CAMERA = false;
-        camera.rotation.x = 0;
-        camera.rotation.y = 0;
-        document.getElementById("dropdown").value = 2;
-        document.getElementById("wierd_camera").checked = false;
-    })
-    document.getElementById("wierd_camera").addEventListener("change", () => {
-        WIERD_CAMERA = document.getElementById("wierd_camera").checked;
-    })
-    document.getElementById("dropdown").addEventListener("change", () => {
-        selectedValue = document.getElementById("dropdown").value;
-    })
-    document.getElementById("plane_color").addEventListener("change", () => {
-        PLANE_COLOR = document.getElementById("plane_color").value;
-        ground.material.color.set(PLANE_COLOR);
-    })
-    document.getElementById("background_color").addEventListener("change", () => {
-        BACKGROUND_COLOR = document.getElementById("background_color").value;
-        // scene.fog = new THREE.Fog( BACKGROUND_COLOR, 200, 1000 );
-        scene.background = new THREE.Color( BACKGROUND_COLOR );
-        scene.fog = new THREE.Fog( BACKGROUND_COLOR, 700, 1500 );
-    })
-    document.getElementById("grid_color").addEventListener("change", () => {
-        GRID_COLOR = document.getElementById("grid_color").value;
-        scene.remove(grid);
-        grid = new THREE.GridHelper( PLANE_SIZE, 100, GRID_COLOR, GRID_COLOR );
-        grid.material.opacity = 1;
-        grid.material.transparent = true;
-        scene.add( grid );
-    })
+    // document.getElementById("default").addEventListener("click", () => {
+    //     BACKGROUND_COLOR = 0x26ccff;
+    //     PLANE_COLOR = 0x000000;
+    //     GRID_COLOR = 0xa0a000;
+    //     ground.material.color.set(PLANE_COLOR);
+    //     // scene.fog = new THREE.Fog( BACKGROUND_COLOR, 600, 1000 );
+    //     scene.background = new THREE.Color( BACKGROUND_COLOR );
+    //     scene.remove(grid);
+    //     grid = new THREE.GridHelper( 10000, 100, BACKGROUND_COLOR, BACKGROUND_COLOR );
+    //     grid.material.opacity = 1;
+    //     grid.material.transparent = true;
+    //     scene.add( grid );
+    //     selectedValue = 2;
+    //     WIERD_CAMERA = false;
+    //     camera.rotation.x = 0;
+    //     camera.rotation.y = 0;
+    //     document.getElementById("dropdown").value = 2;
+    //     document.getElementById("wierd_camera").checked = false;
+    // })
+    // document.getElementById("wierd_camera").addEventListener("change", () => {
+    //     WIERD_CAMERA = document.getElementById("wierd_camera").checked;
+    // })
+    // document.getElementById("dropdown").addEventListener("change", () => {
+    //     selectedValue = document.getElementById("dropdown").value;
+    // })
+    // document.getElementById("plane_color").addEventListener("change", () => {
+    //     PLANE_COLOR = document.getElementById("plane_color").value;
+    //     ground.material.color.set(PLANE_COLOR);
+    // })
+    // document.getElementById("background_color").addEventListener("change", () => {
+    //     BACKGROUND_COLOR = document.getElementById("background_color").value;
+    //     // scene.fog = new THREE.Fog( BACKGROUND_COLOR, 200, 1000 );
+    //     scene.background = new THREE.Color( BACKGROUND_COLOR );
+    //     // scene.fog = new THREE.Fog( BACKGROUND_COLOR, 700, 1500 );
+    // })
+    // document.getElementById("grid_color").addEventListener("change", () => {
+    //     GRID_COLOR = document.getElementById("grid_color").value;
+    //     scene.remove(grid);
+    //     grid = new THREE.GridHelper( PLANE_SIZE, 100, GRID_COLOR, GRID_COLOR );
+    //     grid.material.opacity = 1;
+    //     grid.material.transparent = true;
+    //     scene.add( grid );
+    // })
     document.getElementById("camera").addEventListener("click", () => {
          switchCamera();
     })
@@ -217,7 +226,7 @@ function init() {
     scene.add( ground );
 
     // GridHelper( size : number, divisions : Number, colorCenterLine : Color, colorGrid : Color )
-    grid = new THREE.GridHelper( PLANE_SIZE, 100, BACKGROUND_COLOR, BACKGROUND_COLOR );
+    grid = new THREE.GridHelper( PLANE_SIZE, 100, GRID_COLOR, GRID_COLOR );
     grid.material.opacity = 1;
     grid.material.transparent = true;
     scene.add( grid );
