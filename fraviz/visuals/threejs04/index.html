@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="300">
+  <title>Title</title>
+  <!-- <link rel="stylesheet" href="/src/styles.css"> -->
+  <style>
+  body {
+    margin: 0;
+  }
+  </style>
+</head>
+
+<body>
+  speed:
+  <select id="dropdown">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+    </select>
+  wierd camera?
+    <input id="wierd_camera" type="checkbox">
+
+  <button id="default">RESET</button>
+
+    <a href="../../index.html">back</a></br>
+    <div style="display:flex; justify-content:space-between; width:40%">
+      <button id="resume">resume audio context</button>
+      <a href="../threejs04_file">file input</a>
+      <button id="camera">switch camera</button>
+    </div>
+</body>
+<script defer src="three.js"></script>
+<script defer src="grid.js"></script>
+<script defer src="mic.js"></script>
+<script defer src="creative_coding.js"></script>
+<script defer src="init.js"></script>
+<script src="../src/base.js"></script>
+</html>

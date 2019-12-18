@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  <meta http-equiv="refresh" content="300">
+  <!-- <link rel="stylesheet" href="/src/styles.css"> -->
+  <style>
+  body {
+    margin: 0;
+  }
+  </style>
+</head>
+
+<body>
+  speed:
+  <select id="dropdown">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="50">50</option>
+    </select>
+  wierd camera?
+    <input id="wierd_camera" type="checkbox">
+
+  <button id="default">RESET</button>
+  
+  <a href="../../../index.html">back</a></br>
+  <div style="display:flex; justify-content:space-between; width:50%">
+      <button id="resume">resume/play</button>
+      <a href="../../threejs04">microphone input</a>
+      <button id="camera">switch camera</button>
+    </div>
+    <div style="display:flex; justify-content:space-between; width:50%">
+      <a href="../du_sale/">du_sale</a>
+      <a href="../omen/">omen</a>
+      <a href="../second_waltz/">second_waltz</a>
+      <a href="../sun_king/">sun_king</a>
+      <a href="../toi/">toi</a>
+      <a href="../ton_chemin/">ton_chemin</a>
+  </div>
+
+</body>
+<script defer src="mic.js"></script>
+<script defer src="../../threejs04/three.js"></script>
+<script defer src="../../threejs04/grid.js"></script>
+<script defer src="../../threejs04/creative_coding.js"></script>
+<script defer src="../../threejs04/init.js"></script>
+<script src="../../src/base.js"></script>
+<script>
+
+let audio_path = "../../../music/sweet_dreams.mp3"
+let song = new Audio(audio_path);
+
+function playAudio () {
+  let promise = song.play();
+
+  if (promise !== undefined) {
+  promise.then(_ => {
+      // Autoplay started!
+  }).catch(error => {
+    song.play();
+      // Autoplay was prevented.
+      // Show a "Play" button so that user can start playback.
+  });
+  }
+}
+
+playAudio();
+</script>
+</html>
