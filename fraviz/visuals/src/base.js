@@ -5,3 +5,5 @@ setInterval(function() {
 function cl(expression) {
     console.log(expression);
 }
+
+cl("??")
