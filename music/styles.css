@@ -1,38 +1,64 @@
 * {
     font-family: 'Source Code Pro', monospace;
-  }
+}
 
-  body {
-    background-color: #242424;
-  }
+body {
+  background-color: #242424;
+}
 
-  h1,
-  h2 {
-    color: white;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 900;
-  }
+h1,
+h2 {
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 900;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+}
 
-  li {
-    font-size: 14px;
-    border-bottom: 1px dashed black;
-  }
-  
-  li:nth-child(odd){
-    background-color: #f0f0f0;
-  }
+li {
+  font-size: 14px;
+  border-bottom: 1px dashed black;
+}
+
+li:nth-child(odd){
+  background-color: #f0f0f0;
+}
+
+#heading li{
+  background-color: #3b3b3b;
+  color: white;
+  font-weight: 900;
+}
 
 
-  .page-title {
-    padding: 2em 0;
-  }
+.page-title {
+  padding: 2em 0;
+}
 
-  #songList {
-    background-color: white;
-    padding: 40px;
-  }
+#songList {
+  background-color: white;
+  padding: 0px 40px 40px 40px;
+}
+
+#heading {
+  background-color: white;
+  padding: 40px 40px 0px 40px;
+  margin: 0;
+}
+
+.name-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.interpret {
+  text-align: right;
+}
+
+.interpret:before {
+  /* content: '-'; */
+  padding-right: 0.5em;
+}
