@@ -42,162 +42,197 @@
   #tried>li{
     font-weight: bold;
   }
+  .recepty {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .recept {
+    width: 980px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3em;
+    padding: 3em 0;
+    border: 1px black dashed;
+  }
+  .recept img{
+    display: block;
+    float: right;
+    width: 500px;
+  }
+  .recept div{
+    display: block;
+    float: left;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .recept img{
+      /* width: 150px; */
+      display: none;
+  }
+  .recept {
+    width: 100%;
+    justify-content: end;
+  }
+  .recept div{
+    padding-left: 4em;
+  }
+}
   </style>
 </head>
 <body>
 
 
-  <h1>food</h1>
+  
+  <div class="recepty">
+    <h1>food</h1>
+  <h2>To je žrádlo</h2>
 
+  <div class="space"></div>
+
+
+
+  <div class="recept">
+    <div>
+      <h3>Těstovinový salát</h3>
+      <ul>
+        <li>hermelín</li>
+        <li>brambory/salát</li>
+        <li>brusinky</li>
+        <li>koření na brambory</li>
+        <li>rajčata</li>
+      </ul>
+    </div>
+    <img src="img/1.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Kari</h3>
+      <ul>
+        <li>kari pasta (žlutá/červená)</li>
+        <li>tofu</li>
+        <li>mrkev</li>
+        <li>papriky</li>
+        <li>cibule</li>
+        <li>rybí omáčka</li>
+        <li>kokosové mléko</li>
+        <li>lilek</li>
+        <li>třtinový cukr</li>
+      </ul>
+    </div>
+    <img src="img/1.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Hermelín</h3>
+      <ul>
+        <li>hermelín</li>
+        <li>brambory/salát</li>
+        <li>brusinky</li>
+        <li>koření na brambory</li>
+        <li>rajčata</li>
+      </ul>
+    </div>
+    <img src="img/3.png" />
+  </div>
+
+
+  <h2>Jen tak halabala to vysypat na tác</h2>
+
+
+  <div class="recept">
+    <div>
+      <h3>Sýrová omáčka</h3>
+      <ul>
+        <li>eidam</li>
+        <li>sladká smetana</li>
+        <li>česnek</li>
+        <li>oregano</li>
+        <li>cibule</li>
+        <li>tavený sýr</li>
+        <li>podávat s rajčaty, jarní cibulkou</li>
+      </ul>
+    </div>
+    <img src="img/5.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Fazole</h3>
+      <ul>
+        <li>rajčata</li>
+        <li>rýže</li>
+        <li>gram masala</li>
+        <li>cibule</li>
+        <li>fazole</li>
+      </ul>
+    </div>
+    <img src="img/8.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Smažená rýže </h3>
+      <ul>
+        <li>rýže</li>
+        <li>cibule</li>
+        <li>mražená zelenina</li>
+        <li>kari</li>
+        <li>sójová omáčka</li>
+      </ul>
+    </div>
+    <img src="img/4.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Tortilla</h3>
+      <ul>
+        <li>sýr</li>
+        <li>salát</li>
+        <li>pesto</li>
+        <li>rajčata</li>
+        <li>tortilly</li>
+        <li>olivy</li>
+      </ul>
+    </div>
+    <img src="img/7.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Grilovaná zelenina</h3>
+      <ul>
+        <li>červená cibule</li>
+        <li>batáty</li>
+        <li>cizrna</li>
+        <li>brambory</li>
+        <li>petržel</li>
+        <li>mrkev</li>
+        <li>celer</li>
+        <li>dýně</li>
+      </ul>
+    </div>
+    <img src="img/6.png" />
+  </div>
+
+ 
+</div>
+
+
+
+
+
+
+<div class="space"></div>
+<div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
 
   <h2>odkazy</h2>
-  <ul>
+  <ul >
     <li><a target="_blank" href="https://www.madeleineolivia.co.uk/blog?category=food">madeleine</a></li>
     <li><a target="_blank" href="https://www.youtube.com/channel/UCEjkioV3LO_OIUaSWRxFZ3A">cheap lazy vegan</a></li>
   </ul>
-
-
-  <div class="space"></div>
-
-  <ul id="tried">
-    <li>Thajske kari</li>
-      <ul>
-        <li><a href="http://www.mycookingdiary.cz/recept/thajske-cervene-kari/">recept</a></li>
-        <li>kari pasta</li>
-        <li>papriky</li>
-        <li>cibule</li>
-        <li>mrkev</li>
-      </ul>
-    <li>Cizrna s ryzi</li>
-      <ul>
-        <li><a href="http://www.korenizivota.com/cizrna-s-ryzi-ve-vonave-indicke-omacce/">recept</a></li>
-        <li><a href="https://www.apetitonline.cz/recept/cizrnova-omacka-s-ryzi">recept</a></li>
-        <li>cibule</li>
-        <li>rajcata</li>
-        <li>rajcatovy protlak</li>
-        <li>kurkuma/ sladka paprika/ pepr/ sul</li>
-        <li>cizrna (treba konzerva)</li>
-        <li>ryze basmati/jasminova + lnena, sezamova seminka</li>
-      </ul>
-    <li>Testovinovy salat</li>
-      <ul>
-        <li>testoviny (barevne vrtule vypadaj dobre)</li>
-        <li>majolka</li>
-        <li>podravka</li>
-        <li>rajcata</li>
-        <li>papriky</li>
-        <li>kukurice</li>
-        <li>syr (eidam/hermelin)</li>
-        <li>olivy</li>
-      </ul>
-  </ul>
-
-  <div class="space"></div>
-
-<dl id="id00">
-  <span>
-  <dt>steak a bramborova kase s kukurici</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>zapecena ryba v troube na smetane s houbami, hranolky</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>toasty</dt>
-  <dd>s rukolou, syrem, pestem, sunkou, zampiony</dd>
-  </span>
-
-  <span>
-  <dt>ryze se spenatem, cesnekem a syrem</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>testovinovy salat</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>zapecene brambory s mletym masem, rajcaty, kukurici, smetanou a houbami</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>testoviny s omackou (syr/kure na paprice)</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>hamburgery</dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>ryze se zeleninou/zampiony </dt>
-  </dd>
-  </span>
-
-  <span>
-  <dt>sushi</dt>
-  <dd>sushi rýže, rýžový ocet, řasa nori, sojová omáčka, wasabi</dd>
-  </span>
-
-  <span>
-  <dt>Bún bò Nam Bô</dt>
-  <dd></dd>
-  </span>
-
-
-</dl>
-<!-- <div class="space"></div>
-
-<h3>Pakistani, Indian and South Asian Recipes</h3>
-
-http://www.khanapakana.com/recipes.aspx
-
-<div class="space"></div>
-
-<h3>Indická jídla</h3>
-
-
-http://indickerecepty.cz
-
-http://satyam.cz/vegetarianske-pokrmy/
-
-<h4>Koření</h4>
-<ul id="id00">
-    <span><li>směs garam masala</li></span>
-    <span><li>kari</li></span>
-    <span><li>římský kmín mletý</li></span>
-    <span><li>semínko pískavice</li></span>
-    <span><li>chilli</li></span>
-    <span><li>koriandr</li></span>
-    <span><li>kurkuma</li></span>
-    <span><li>Zázvor</li></span>
-</ul>
-
-
-<div class="images-container">
-  <img src="img/satyam-vegetarianske-pokrmy.png">
-  <img src="img/satyam-hlavni1.png">
-  <img src="img/satyam-hlavni2.png">
-  <img src="img/satyam-talire.png">
+  
 </div>
-
 <div class="space"></div>
-<h3>Zdravý Stůl - app</h3>
 
-<div class="images-container">
- <img src="img/Screenshot_1.png">
- <img src="img/Screenshot_2.png">
- <img src="img/Screenshot_3.png">
- <img src="img/Screenshot_4.png">
- <img src="img/Screenshot_5.png">
- <img src="img/Screenshot_6.png">
-</div> -->
 
 <script>
 function sortList(id) {
