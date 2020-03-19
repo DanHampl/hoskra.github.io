@@ -13,6 +13,10 @@
     font-size: 14px;
     background-color: #111111;
   }
+  a {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 4px;
+  }
 
   dl{
     padding: 20px;
@@ -44,19 +48,19 @@
   }
 
   a:visited{
-    color: blue;
+    color: #3700de;
   }
 
   .highlight{
-    background-color: #9fffea;
+    background-color:#8affc4;
   }
 
   .highlight dt{
-    background-color: #9fffea;
+    background-color:#8affc4;
   }
 
   .highlight dd{
-    background-color: #9fffea;
+    background-color:#8affc4;
   }
 
 ::-webkit-scrollbar {
@@ -366,7 +370,8 @@ let dt = dl.getElementsByTagName("dt");
 for (let x of dt){
   var a = document.createElement("a");
   what = x.innerHTML;
-  a.innerHTML = " [↗]";
+  a.innerHTML = ' [↗]';
+  // a.innerHTML = '<span class="google-link" [↗]</span>';
   a.setAttribute("style", "text-decoration:none; background-color: transparent ");
   a.setAttribute('target', "_blank");
   a.setAttribute('href',search(what));
