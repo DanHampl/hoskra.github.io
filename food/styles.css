@@ -1,0 +1,133 @@
+* {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    background-color: #242424;
+}
+
+h1, h2 {
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding: 1em 0 1.5em 0;
+}
+
+a:visited, a {
+    color: yellow;
+}
+
+.space {
+    content: "";
+    height: 100px;
+    width: 100%;
+    display: block;
+}
+
+.images-container img{
+    width: 700px;
+    padding: 20px 0;
+}
+
+#tried>li{
+    font-weight: bold;
+}
+
+.recepty-container {
+    background-color: white;
+}
+
+.recepty {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.recept {
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3em 0;
+    border-bottom: 1px black dashed;
+}
+
+.recept div{
+    width: 350px;
+}
+
+.recepty :last-child {
+    border: none;
+}
+
+.recept img {
+    display: block;
+    float: right;
+    width: 500px;
+}
+
+.recept div {
+    display: block;
+    float: left;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+}
+
+.links {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: left;
+}
+
+.links h2 {
+    padding-bottom :0;
+}
+
+.links ul {
+    color: yellow;
+}
+
+.links ul {
+    padding-left: 1.2em;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+    .recept {
+        width: 100%;
+    }
+    .recept img {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+    .recept img {
+        display: none;
+    }
+    .recept {
+        width: 100%;
+        justify-content: end;
+    }
+    .recept div {
+        padding-left: 4em;
+    }
+}

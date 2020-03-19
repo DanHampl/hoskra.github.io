@@ -6,108 +6,20 @@
 
   <title>hoskra</title>
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  <link rel="stylesheet" href="styles.css?v=1.0">
   <style>
-  *{
-    font-family: 'Source Code Pro', monospace;
-    font-size: 14px;
-  }
 
-  h1 {
-    font-size: 2em;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
-
-  dd{
-    padding-bottom: 5px;
-    margin-left: 15px;
-  }
-
-  dt{
-    font-weight: bold;
-    padding-top: 10px;
-  }
-  .space {
-    content: "";
-    height: 100px;
-    width: 100%;
-    display: block;
-  }
-  .images-container img{
-    width: 700px;
-    padding: 20px 0;
-  }
-  #tried>li{
-    font-weight: bold;
-  }
-  .recepty {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-  .recept {
-    width: 980px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 3em;
-    padding: 3em 0;
-    border: 1px black dashed;
-  }
-  .recept img{
-    display: block;
-    float: right;
-    width: 500px;
-  }
-  .recept div{
-    display: block;
-    float: left;
-  }
-
-  @media only screen and (max-width: 900px) {
-    .recept img{
-      /* width: 150px; */
-      display: none;
-  }
-  .recept {
-    width: 100%;
-    justify-content: end;
-  }
-  .recept div{
-    padding-left: 4em;
-  }
-}
   </style>
 </head>
 <body>
 
+  <div class="container">
+  <h1>food</h1>
 
-  
+  <div class="recepty-container">
   <div class="recepty">
-    <h1>food</h1>
-  <h2>To je žrádlo</h2>
-
-  <div class="space"></div>
-
-
-
-  <div class="recept">
-    <div>
-      <h3>Těstovinový salát</h3>
-      <ul>
-        <li>hermelín</li>
-        <li>brambory/salát</li>
-        <li>brusinky</li>
-        <li>koření na brambory</li>
-        <li>rajčata</li>
-      </ul>
-    </div>
-    <img src="img/1.png" />
-  </div>
-  <div class="recept">
-    <div>
+    <div class="recept">
+      <div>
       <h3>Kari</h3>
       <ul>
         <li>kari pasta (žlutá/červená)</li>
@@ -119,6 +31,19 @@
         <li>kokosové mléko</li>
         <li>lilek</li>
         <li>třtinový cukr</li>
+      </ul>
+    </div>
+    <img src="img/2.png" />
+  </div>
+  <div class="recept">
+    <div>
+      <h3>Těstovinový salát</h3>
+      <ul>
+        <li>hermelín</li>
+        <li>brambory/salát</li>
+        <li>brusinky</li>
+        <li>koření na brambory</li>
+        <li>rajčata</li>
       </ul>
     </div>
     <img src="img/1.png" />
@@ -137,10 +62,12 @@
     <img src="img/3.png" />
   </div>
 
+  </div>
+  </div>
 
-  <h2>Jen tak halabala to vysypat na tác</h2>
-
-
+  <h2 class="middle">Jen tak halabala to vysypat na tác</h2>
+  <div class="recepty-container">
+  <div class="recepty">
   <div class="recept">
     <div>
       <h3>Sýrová omáčka</h3>
@@ -212,27 +139,24 @@
     </div>
     <img src="img/6.png" />
   </div>
+  </div>
 
- 
+
 </div>
 
-
-
-
-
-
-<div class="space"></div>
-<div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+<div class="links">
 
   <h2>odkazy</h2>
-  <ul >
+  <ul>
     <li><a target="_blank" href="https://www.madeleineolivia.co.uk/blog?category=food">madeleine</a></li>
     <li><a target="_blank" href="https://www.youtube.com/channel/UCEjkioV3LO_OIUaSWRxFZ3A">cheap lazy vegan</a></li>
+    <li><a target="_blank" href="https://www.youtube.com/channel/UCq2E1mIwUKMWzCA4liA_XGQ">pick up limesn</a></li>
   </ul>
-  
+
 </div>
 <div class="space"></div>
 
+</div>
 
 <script>
 function sortList(id) {
