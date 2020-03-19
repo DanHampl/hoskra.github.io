@@ -1,3 +1,6 @@
+* {
+    font-family: monospace !important;
+}
 li {
     font-size: 24px;
 }

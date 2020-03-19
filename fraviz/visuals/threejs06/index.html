@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="300">
+  <title>Title</title>
+  <link rel="stylesheet" href="../src/styles.css">
+  <style>
+  body {
+    margin: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <div style="display:flex; justify-content:space-between; width:60%">
+    <div>
+      speed:
+      <select id="dropdown">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="wierd_camera">wierd camera?</label>
+      <input id="wierd_camera" type="checkbox">
+    </div>
+
+    <button id="default">RESET</button>
+
+    <div>
+      <a href="../../index.html">back</a>
+    </div>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; width:40%">
+    grid rotation:
+    <select id="gridRotation">
+      <option value="1">180</option>
+      <option value="2">90</option>
+      <option value="3">60</option>
+      <option value="4">45</option>
+      <option value="6">30</option>
+    </select>
+    number of grids:
+    <div>
+      <button id="grid1">1</button>
+      <button id="grid2">2</button>
+      <button id="grid3">3</button>
+      <button id="grid4">4</button>
+    </div>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; width:60%">
+    <button id="resume">resume audio context</button>
+    <!-- <a href="../threejs04_file">file input</a> -->
+    <button id="camera">switch camera</button>
+  </div>
+</body>
+<script defer src="three.js"></script>
+<script defer src="grid.js"></script>
+<script defer src="mic.js"></script>
+<script defer src="creative_coding.js"></script>
+<script defer src="init.js"></script>
+<script src="../src/base.js"></script>
+<script>
+
+  let audio_path = "../../music/human_activity.mp3"
+  let song = new Audio(audio_path);
+
+  function playAudio () {
+    let promise = song.play();
+
+    if (promise !== undefined) {
+    promise.then(_ => {
+        // Autoplay started!
+    }).catch(error => {
+      song.play();
+        // Autoplay was prevented.
+        // Show a "Play" button so that user can start playback.
+    });
+    }
+  }
+
+  playAudio();
+  </script>
+
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Player</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../../src/three.js"></script>
+  <script defer src="../../src/jquery-3.4.1.min.js"></script>
+<style>
+  #error{
+    font-weight: 900;
+    font-size: 1.5em;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  ul li {
+    padding: 5px 0;
+  }
+  h1 {
+    margin-bottom: 2px
+  }
+  .container {
+    display: block;
+  }
+  .menu {
+    display: block;
+    float: left;
+    width: 200px;
+    padding: 10px;
+    height: 100vh;
+    background-color:lemonchiffon
+  }
+  .app {
+    height: 100vh;
+    width: calc(100vw - 240px);
+    display: block;
+    float: left;
+    background-color: antiquewhite;
+  }
+  #progressBar {
+    height: 20px;
+    width: 50px;
+    background-color: greenyellow;
+  }
+  #progressBarContainer {
+    background-color: #404040;
+    border:5px solid black
+  }
+  .panner {
+    padding-top: 200px;
+  }
+  #back {
+    float: right
+  }
+</style>
+</head>
+<body>
+
+  <div id="error"></div>
+
+  <div class="container">
+    <div class="menu">
+      <a id="back" href="../../index.html">back</a>
+      <h1>Fraviz</h1>
+
+      <ul>
+        <li>
+          <select id="songSelect">
+          </select>
+        </li>
+        <li>
+          <button id="playPause" data-playing="false" role="switch" aria-checked="false">
+            <span>Play/Pause</span>
+          </button>
+          <button id="stop">stop</button>
+        </li>
+        <li>
+          <span id="timer"></span><br/>
+        </li>
+        <li>
+          <div id=progressBarContainer>
+            <div id="progressBar"></div>
+          </div>
+        </li>
+        <li class="panner">
+          <span>left / right:</span>
+        </li>
+        <li>
+          <input type="range" id="panner" min="-1" max="1" value="0" step="0.01">
+        </li>
+      </ul>
+    </div>
+    <div class="app">
+
+      <canvas id="mainCanvas" width="100%" height="100%"></canvas>
+      <!-- <audio controls id="mainAudio" src="../../music/du_sale.mp3"  type="audio/mpeg" /> -->
+      <audio controls id="mainAudio" />
+      <!-- <audio id="mainAudio" /> -->
+        <source id="source" src="../../music/du_sale.mp3"  type="audio/mpeg"/> -->
+      <!-- <!-- </audio> -->
+    </div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+</body>
+<script defer src="index.js"></script>
+<!-- <script defer src="Mic.js"></script> -->
+<script defer src="changeFile.js"></script>
+<script defer src="eventHandlers.js"></script>
+<script defer src="timerProgress.js"></script>
+</html>
