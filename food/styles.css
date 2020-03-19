@@ -60,8 +60,12 @@ a:visited, a {
     border-bottom: 1px black dashed;
 }
 
+.recept:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
 .recept div{
-    width: 350px;
+    width: 320px;
 }
 
 .recepty :last-child {
@@ -117,6 +121,9 @@ a:visited, a {
 }
 
 @media only screen and (max-width: 500px) {
+    .recept:nth-of-type(even) {
+        flex-direction: row;
+    }
     .container {
         width: 100%;
     }
@@ -128,6 +135,6 @@ a:visited, a {
         justify-content: end;
     }
     .recept div {
-        padding-left: 4em;
+        padding-left: 2em;
     }
 }
