@@ -56,9 +56,17 @@ li:nth-child(odd){
 
 .interpret {
   text-align: right;
+  font-weight: bold;
+  display: inline;
 }
 
 .interpret:before {
   /* content: '-'; */
   padding-right: 0.5em;
+}
+
+@media only screen and (max-width: 767px) {
+  .interpret {
+    display: none;
+  }
 }
