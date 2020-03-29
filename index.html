@@ -37,7 +37,7 @@
     display: block;
   }
   .container {
-    background-color: white;
+    color: white;
     padding: 20px;
     width: 500px;
     margin: auto;
@@ -52,11 +52,7 @@
 </head>
 <body>
   
-<div class="title">
-  <h1>10/10</h1>
-</div>
 <div class="container">
-<h2>filmy / seriály</h2>
 
 
 
@@ -77,7 +73,6 @@
 <li>Přelet nad kukaččím hnízdem</li>
 </ul>
 
-<h2>knihy</h2>
 
 <ul id="id01">
 <li>Aldous Huxley - Brány vnímání </li>
@@ -98,20 +93,6 @@
 <li>Daniel Keyes - Růže pro Algernon</li>
 <li>Andy Weir - The Egg</li>
 </ul>
-
-<h2>lidi</h2>
-<ul id="id02">
-<li>Maurits Cornelis Escher</li>
-<li>Alan Watts</li>
-</ul>
-
-<h2>todo</h2>
-<ul id="id03">
-<li>Disco Elysium</li>
-<li>Hellblade senua's sacrifice.</li>
-<li>Guillermo del Toro - Devil</li>
-</ul>
-</div>
 
 
 <script>
@@ -137,7 +118,7 @@ function sortList(id) {
   }
 }
 
-let lists = ["id00" , "id01" , "id02", "id03"];
+let lists = ["id00" , "id01"];
 
 for (i = 0; i < lists.length; i++){
 	sortList(lists[i]);
