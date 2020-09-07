@@ -5,7 +5,7 @@
   <title>hoskra</title>
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <link rel="icon" href="ico.png">
-  <link rel="stylesheet" href="/global.css">
+  <!-- <link rel="stylesheet" href="/global.css"> -->
   <style>
   *{
     font-family: 'Source Code Pro', monospace;
@@ -42,6 +42,15 @@
     width: 500px;
     margin: auto;
   }
+
+  .szz a:visited, a:hover, a:target, a{
+    color: white;
+  }
+  .szz li {
+    padding: 5px 0;
+  }
+
+
   @media only screen and (max-width: 600px) {
     .container {
       width: 400px;
@@ -54,9 +63,23 @@
   
 <div class="container">
 
+<ul id="id00" class="szz">
+<li><a target="_blank" href="prezentace.pdf">Prezentace</a></li>
+<li><a target="_blank" href="http://fraviz.herokuapp.com">Aplikace</a></li>
+<li><a target="_blank" href="https://open.spotify.com">Přehrávač</a></li>
+<li><a target="_blank" href="https://www.youtube.com/watch?v=j9JtOE5z778&list=PLwYK1ZXc9wKIlI_JlUBGm3Xk8U5ajQwxu">Youtube</a></li>
+</ul>
+
+<ul class="szz">
+<li><a target="_blank" href="https://open.spotify.com/search/worakls%20toi">Worakls - Toi</a></li>
+<li><a target="_blank" href="https://open.spotify.com/search/live%20pink%20floyd">Pink Floyd - High Hopes</a></li>
+<li><a target="_blank" href="https://open.spotify.com/search/live%20pink%20floydd">Pink Floyd - Hey You</a></li>
+<li><a target="_blank" href="https://open.spotify.com/search/ensiferum%20wanderer">Ensiferum - Wanderer</a></li>
+<li><a target="_blank" href="https://open.spotify.com/search/prodigy%20breathe">Prodigy - Breathe</a></li>
+</ul>
 
 
-<ul id="id00">
+<!-- <ul id="id00">
 <li>Bladerunner </li>
 <li>Mr Robot </li>
 <li>Mr Nobody </li>
@@ -92,10 +115,10 @@
 <li>Jean Giono - Muž, který sázel stromy</li>
 <li>Daniel Keyes - Růže pro Algernon</li>
 <li>Andy Weir - The Egg</li>
-</ul>
+</ul> -->
 
 
-<script>
+<!-- <script>
 function sortList(id) {
   var list, i, switching, b, shouldSwitch;
   list = document.getElementById(id);
@@ -124,6 +147,6 @@ for (i = 0; i < lists.length; i++){
 	sortList(lists[i]);
 }
 
-</script>
+</script> -->
 </body>
 </html>
