@@ -1,0 +1,41 @@
+#output {
+  width: 600px;
+  display: flex;
+  margin-top: 2em;
+}
+
+.letter {
+  position: absolute;
+  font-size: 3em;
+  display: none;
+  font-family: Bodoni;
+}
+
+
+#generate, #color {
+  margin-left: 0.5em;
+}
+
+.center-container {
+  justify-content: center;
+  display: flex;
+}
+
+button {
+  border: none;
+  display: flex;
+  background-color: darkgrey;
+}
+
+button label {
+  margin: 0.2em 0;
+}
+
+.font-size input {
+  margin-left: 1em;
+}
+
+@font-face {
+  font-family: Bodoni;
+  src: url(Bodoni.ttf);
+}
