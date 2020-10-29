@@ -1,7 +1,10 @@
+import * as THREE from './three/build/three.module.js';
+import { GUI } from './three/examples/jsm/libs/dat.gui.module.js';
+import { MapControls } from './three/examples/jsm/controls/OrbitControls.js';
+
 let camera, controls, scene, renderer;
 
 init();
-//render(); // remove when using next line for animation loop (requestAnimationFrame)
 animate();
 
 function init() {
@@ -26,12 +29,9 @@ function init() {
 
   controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
   controls.dampingFactor = 0.05;
-
   controls.screenSpacePanning = false;
-
   controls.minDistance = 100;
   controls.maxDistance = 500;
-
   controls.maxPolarAngle = Math.PI / 2;
 
   // world
@@ -73,18 +73,15 @@ function init() {
   window.addEventListener( 'resize', onWindowResize, false );
 
 
-  const gui = new GUI();
-  gui.add( controls, 'screenSpacePanning' );
+  // const gui = new GUI();
+  // gui.add( controls, 'screenSpacePanning' );
 
 }
 
 function onWindowResize() {
-
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-
   renderer.setSize( window.innerWidth, window.innerHeight );
-
 }
 
 function animate() {
@@ -92,13 +89,10 @@ function animate() {
   requestAnimationFrame( animate );
 
   controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
-
   render();
 
 }
 
 function render() {
-
   renderer.render( scene, camera );
-
 }
