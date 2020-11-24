@@ -35,7 +35,8 @@ import * as THREE from './three.module.js';
 				const loader = new THREE.CubeTextureLoader();
 				loader.setPath( 'textures/' );
 
-				textureCube = loader.load( [ 'px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png' ] );
+				// textureCube = loader.load( [ 'px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png' ] );
+				textureCube = loader.load( [ 'right.png', 'left.png', 'up.png', 'down.png', 'front.png', 'back.png' ] );
 				textureCube.encoding = THREE.sRGBEncoding;
 
 				const textureLoader = new THREE.TextureLoader();
