@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Link</title>
+  <style>
+    *{
+      font-size:large;
+      font-family: monospace;
+      color: white;
+    }
+    body{
+      display:grid;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin:0;
+      background-color: black;
+    }
+    button {
+      border:none;
+      width:20em;
+      height:2em;
+      margin:5em;
+      background-color: rgb(60, 116, 255);
+    }
+    .container{
+      display:grid;
+      justify-content: center;
+      margin:auto;
+      row-gap: 1em;
+      min-height: 40vh;
+    }
+    #random{
+      margin:auto;
+      display:grid;
+      align-content: center;
+    }
+    #display{
+      max-width: 20em;
+      display:grid;
+      margin:auto;
+    }
+  </style>
+<body>
+
+  <div class="container">
+    <button id="random">random</button>
+    <div id="display"></div>
+  </div>
+
+</body>
+<script>
+
+let links = [
+  "1.1 Grupoidy, pologrupy, monoidy a grupy, základní vlastnosti a definice." ,
+  "1.2 Podgrupy, generátory a podgrupy generované množinami." ,
+  "1.3 Cyklické grupy, generátory." ,
+  "1.4 Homomorfizmus, izomorfizmus – vlastnosti a příklady izomorfních grup." ,
+  "1.5 Tělesa, okruhy, obory integrity." ,
+  "1.6 Konečná tělesa obecně, konečná tělesa s prvočíselným řádem." ,
+  "1.7 Konečná tělesa neprvočíselného řádu, ireducibilní polynom, okruh polynomů." ,
+  "1.8 Výpočet inverzních prvků v Z×n a GF(p^n) pomocí rozšířeného Euklidova algoritmu.",
+  "2.1 Parciální derivace, Hessova a Jacobiho matice.",
+  "2.2 Geometrický význam gradientu, tečná nadrovina.",
+  "2.3 Hledání lok. extrémů funkce více proměnných bez omezení.",
+  "2.4 Lok. extrémy funkce ve více proměnných při rovnostních omezeních.",
+  "2.5 Lok. extrémy funkce ve více proměnných při nerovnostních omezeních.",
+  "2.6 Teorie 1D a 2D integrálu.",
+  "2.7 Metody používané pro výpočet 1D a 2D integrálu.",
+  "3.1 Strojová čísla dle standardu IEEE-754, zdroje zaokrouhlovacích chyb v numerických výpočtech a základní odhady na jejich velikost.",
+  "3.2 Numerické metody obecně: iterační vs. přímé metody (výhody, nevýhody, příklady metod).",
+  "3.3 Numerické metody řešení soustav lineárních rovnic obecně (formulace úlohy, podmíněnost).",
+  "3.4 Iterační numerické metody řešení soustav lineárních rovnic (konkrétní volby volby a konvergence metod).",
+  "3.5 Mocninná metoda pro hledání dominantního vlastního čísla a příslušného vlastního vektoru matice."
+]
+
+let queue_links = [];
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function fillQueue(queue, array){
+    for (let link of array) {
+        queue.push(link);
+      }
+    shuffle(queue);
+}
+
+fillQueue(queue_links, links);
+
+document.getElementById("random").addEventListener("click", function(){
+    if(queue_links.length === 0){
+        fillQueue(queue_links, links);
+    }
+    document.getElementById("display").innerHTML = queue_links.shift();
+});
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+      if(queue_links.length === 0){
+        fillQueue(queue_links, links);
+    }
+    document.getElementById("display").innerHTML = queue_links.shift();
+    }
+}
+
+</script>
+</html>
