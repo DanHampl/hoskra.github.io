@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Link</title>
+  <style>
+    *{
+      font-size:large;
+      font-family: monospace;
+      color: white;
+    }
+    body{
+      display:grid;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin:0;
+      background-color: black;
+    }
+    button {
+      border:none;
+      width:20em;
+      height:2em;
+      margin:5em;
+      background-color: rgb(60, 116, 255);
+    }
+    .container{
+      display:grid;
+      justify-content: center;
+      margin:auto;
+      row-gap: 1em;
+      min-height: 40vh;
+    }
+    #random{
+      margin:auto;
+      display:grid;
+      align-content: center;
+    }
+    #display{
+      max-width: 20em;
+      display:grid;
+      margin:auto;
+    }
+  </style>
+<body>
+
+  <div class="container">
+    <button id="random">random</button>
+    <div id="display"></div>
+  </div>
+
+</body>
+<script>
+
+let links = [
+'1. PRAM model a ošetření konfliktů při přístupu do sdílené paměti.',
+'2. APRAM model a implementace synchronizační bariéry.',
+'3. Paralelní čas, zrychlení, cena, efektivnost a paralelní optimalita výkonnosti.',
+'4. Amdahlův zákon, Gustafsonův zákon a izoefektivní funkce.',
+'5. OpenMP: programový model, paralelní region, vlastnosti proměnných.',
+'6. OpenMP: datový paralelismus (direktiva for), sémantika, parametry.',
+'7. OpenMP: funkční paralelismus (direktiva task), sémantika, parametry.',
+'8. OpenMP: Synchronizační direktivy.',
+'9. Paralelní algoritmy pro prohledávání stavového prostoru, anomálie prohledávání, statické rozdělení prostoru a dynamické vyvažování zátěže.',
+'10. Klasifikace efektivně paralelizovatelných OpenMP programů a zdroje jejich neefektivity, falešné sdílení a jeho eliminace.',
+'11. Paralelizace výpočtu histogramu v OpenMP.',
+'12. Paralelizace násobení polynomů v OpenMP.',
+'13. Paralelizace násobení hustých matic v OpenMP.',
+'14. Formáty pro uložení řídkých matic a paralelizace násobení řídké matice vektorem v OpenMP.',
+'15. Paralelní QuickSort a paralelní rozdělení v OpenMP.',
+'16. Paralelní MergeSort a paralelní sloučení (dvoucestné a p-cestné) v OpenMP.',
+'17. OpenMP+MPI: spolupráce procesů a vláken.',
+'18. MPI: dvoubodové komunikační operace: parametry, stavové objekty.',
+'19. MPI: blokující komunikační operace a jejich komunikační módy.',
+'20. MPI: neblokující komunikační operace a způsoby zjištění jejich dokončení.',
+'21. MPI: návratové hodnoty funkcí a kontrola chyb.',
+'22. MPI: řešení pro permutaci cyklický posuv.',
+'23. Základní grafové vlastnosti propojovacích sítí (vzdálenosti, regularita, souvislost, bisekční šířka, bipartitnost, hierarchicky rekurzivní topologie, řídké/husté topologie).',
+'24. Kartézský součin grafů, uzlová symetrie.',
+'25. n-rozměrná mřížka: definice, vlastnosti, směrování.',
+'26. n-rozměrný toroid: definice, vlastnosti, směrování.',
+'27. n-rozměrná hyperkrychle: definice, vlastnosti, směrování.',
+'28. Řídké hyperkubické sítě: definice, vlastnosti, směrování, souvislost s tlustým stromem.',
+'29. Statické vnoření: definice, měřítka kvality vnoření.',
+'30. Quaziizometrické topologie: mřížky-toroidy, obyčejný-uzavřený motýlek.',
+'31. Binární rozděl-a-panuj výpočty na hyperkrychli a mřížkách.',
+'32. Vnoření hyperkrychle do nízkorozměrných mřížek.',
+'33. Technologie přepínání v paralelních počítačích ulož-pošli-dál a červí: popis, komunikační latence.',
+'34. OAB ve všeportových a 1-portových SF sítích: spodní meze složitosti, algoritmy, jejich složitosti.',
+'35. OAB v 1-portových WH sítích: spodní meze složitosti, algoritmy, jejich složitosti.',
+'36. OAB ve všeportovém WH 2-D toroidu: spodní mez složitosti, algoritmus zobecněné diagonály, jeho složitost.',
+'37. Multicast v 1-portové WH 2-D mřížce: spodní mez složitosti, algoritmus, jeho složitost.',
+'38. Kombinující OAS: spodní meze, algoritmy, jejich složitosti.',
+'39. Nekombinující OAS: spodní meze, algoritmy, jejich složitosti.',
+'40. Nekombinující AAB/AAG: spodní meze, časově hranově disjunktní stromy a hranově-disjunktní hamiltonovské kružnice, algoritmy, jejich složitosti.',
+'41. AAS: spodní meze komunikační latence.',
+'42. MPI funkce pro kolektivní komunikační operace.',
+'43. Paralelní redukce: implementace na PRAM a různých topologiích a jejich složitost, škálovatelnost, MPI funkce.',
+'44. Paralelní prefixový součet: definice, implementace na PRAM a různých topologiích a jejich složitosti, škálovatelnost, MPI funkce.',
+'45. Aplikace paralelního prefixového součtu: zhušťovací problém, paralelní RadixSort, sčítačka s predikcí přenosu.',
+'46. Segmentový paralelní prefixový součet: definice, implementace, aplikace pro paralelní QuickSort.',
+'47. Paralelní zápis lokálních polí procesů do výstupního souboru pomocí MPI-I/O.',
+'48. Mapování hustých matic na paralelní systém s distribuovanou pamětí.',
+'49. Násobení husté matice vektorem při řádkovém, sloupcovém a šachovnicovém mapování.',
+'50. Násobení matice maticí při šachovnicovém mapování: Cannonův a Foxův algoritmus.',
+'51. Mocninná metoda a její implementace v MPI: náhodné a řádkové mapování matice.',
+'52. Mocninná metoda a její implementace v MPI: šachovnicové mapování matice a rozdělení komunikátorů.',
+]
+
+let queue_links = [];
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function fillQueue(queue, array){
+    for (let link of array) {
+        queue.push(link);
+      }
+    shuffle(queue);
+}
+
+fillQueue(queue_links, links);
+
+document.getElementById("random").addEventListener("click", function(){
+    if(queue_links.length === 0){
+        fillQueue(queue_links, links);
+    }
+    document.getElementById("display").innerHTML = queue_links.shift();
+});
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+      if(queue_links.length === 0){
+        fillQueue(queue_links, links);
+    }
+    document.getElementById("display").innerHTML = queue_links.shift();
+    }
+}
+
+</script>
+</html>
