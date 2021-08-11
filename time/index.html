@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timer</title>
+  <meta name="description" content="page-description">
+  <meta name="author" content="page-author">
+
+</head>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+  }
+  #time {
+    font-family: monospace;
+    color: white;
+    font-size: xx-large;
+  }
+</style>
+
+<body>
+  <span id="time"></span>
+<script>
+
+const finaleDate = new Date("May 05, 2022 00:00:00");
+
+const timer = () =>{
+  let now = new Date();
+  let diff = finaleDate - now;
+  let d = new Date(diff);
+
+  let n = d.getMonth() + "M " + d.getDate() + "d " + d.getHours();
+  n += "h " + d.getMinutes() + "m " + d.getSeconds() + "s";
+
+  document.getElementById('time').textContent = n;
+}
+
+timer();
+setInterval(timer,1000);
+
+console.log("Final date is set to May 05, 2022 00:00:00.")
+
+</script>
+</body>
+</html>
