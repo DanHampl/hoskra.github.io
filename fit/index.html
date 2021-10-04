@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  <meta name="description" content="page-description">
+  <meta name="author" content="page-author">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<ul id="header">
+  <li><h1>Subjects</h1></li>
+  <li><a href="data/szz.html">szz</a></li>
+</ul>
+
+<div class="container">
+  <ul id="navigation"> </ul>
+  <div id="text">
+    <div id="keywords">
+      ... navigate with arrrow keys (left / right) ...
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" language="javascript">
+
+let list = document.getElementById("navigation");
+var items = list.children.length;
+var current = 0;
+
+function setSelected(num) {
+  if(num == 1) { if(current == items-1) return;
+  }else if(num == -1) { if(current == 0) return; }
+
+  list.children[current].classList.remove("selected");
+  current += num;
+  list.children[current].classList.add("selected");
+}
+
+
+var next;
+document.onkeydown = check;
+
+let keywords = document.getElementById("keywords");
+let code, keys, iframe;
+
+function check(e){
+	if (!e) var e = window.event;
+		(e.keyCode) ? key = e.keyCode : key = e.which;
+	try{
+		switch(key){
+			case 37:
+			case 65:
+        setSelected(-1);
+      break;
+      case 39:
+      case 68:
+        setSelected(1);
+      break;
+    }
+    code = list.children[current].id
+    keys = fit.subjects.filter(sub => sub.code == code);
+
+    keywords.innerHTML = "<ul>";
+      keys[0].keywords.forEach(key => {
+        keywords.innerHTML += "<li>" + key + "</li>\n";
+      })
+    keywords.innerHTML += "</ul>";
+	}catch(Exception){}
+}
+
+class subject {
+  constructor(semester, code, name, master) {
+    this.semester = semester;
+    this.code = code;
+    this.name = name;
+    this.master = master;
+  }
+  keywords = [];
+}
+
+let fit = {
+  bachelors : "bachelors",
+  master : "master",
+  // bachelors : "Webové a softwarové inženýrství, zaměření Počítačová grafika, 2015-2020",
+  // master : "Mgr. specializace Softwarové inženýrství, 2020",
+  subjects : []
+}
+
+let pa1 = new subject(1, "pa1", "Programování a algoritmizace 1", false); fit.subjects.push(pa1);
+let zma = new subject(1, "zma", "Základy matematické analýzy", false);  fit.subjects.push(zma);
+let mlo = new subject(1, "mlo", "Matematická logika", false); fit.subjects.push(mlo);
+let cao = new subject(1, "cao", "Číslicové a analogové obvody", false); fit.subjects.push(cao);
+let pai = new subject(1, "pai", "Právo a informatika", false);  fit.subjects.push(pai);
+let ps1 = new subject(1, "ps1", "Programování v shellu 1", false);  fit.subjects.push(ps1);
+
+let pa2 = new subject(2, "pa2", "Programování a algoritmizace 2", false); fit.subjects.push(pa2);
+let lin = new subject(2, "lin", "Lineární algebra", false); fit.subjects.push(lin);
+let sap = new subject(2, "sap", "Struktura a architektura počítačů", false);  fit.subjects.push(sap);
+let dbs = new subject(2, "dbs", "Databázové systémy", false); fit.subjects.push(dbs);
+let git = new subject(2, "git", "Systém pro správu verzí Git", false);  fit.subjects.push(git);
+
+let aag = new subject(3, "aag", "Automaty a gramatiky", false); fit.subjects.push(aag);
+let ag1 = new subject(3, "ag1", "Algoritmy a grafy 1", false);  fit.subjects.push(ag1);
+let zdm = new subject(3, "zdm", "Základy diskrétní matematiky", false); fit.subjects.push(zdm);
+let mga = new subject(3, "mga", "Multimediální a grafické aplikace", false);  fit.subjects.push(mga);
+let pyt = new subject(3, "pyt", "Programování v Pythonu", false); fit.subjects.push(pyt);
+
+let si1 = new subject(4, "si1", "Softwarové inženýrství I", false); fit.subjects.push(si1);
+let osy = new subject(4, "osy", "Operační systémy", false); fit.subjects.push(osy);
+let psi = new subject(4, "psi", "Počítačové sítěy", false); fit.subjects.push(psi);
+let bez = new subject(4, "bez", "Bezpečnost", false); fit.subjects.push(bez);
+let pgr = new subject(4, "pgr", "Počítačová grafika", false); fit.subjects.push(pgr);
+let tur = new subject(4, "tur", "Tvorba uživatelského rozhraní", false);  fit.subjects.push(tur);
+
+let pst = new subject(5, "pst", "Pravděpodobnost a statistika", false); fit.subjects.push(pst);
+let pga = new subject(5, "pga", "Programování grafických aplikací", false); fit.subjects.push(pga);
+
+let dpr = new subject(6, "dpr", "Dokumentace, prezentace, rétorika", false);  fit.subjects.push(dpr);
+
+
+let pkm = new subject(1, "pkm", "Přípravný kurz matematiky", false);  fit.subjects.push(pkm);
+let uli = new subject(1, "uli", "Úvod do Linuxu", false);  fit.subjects.push(uli);
+let zwu = new subject(1, "zwu", "Základy webu a uživatelská rozhraní", false);  fit.subjects.push(zwu);
+let emp = new subject(1, "emp", "Ekonomické a manažerské principy", false);  fit.subjects.push(emp);
+let ksa = new subject(1, "ksa", "Úvod do sociální a kulturní antropologie", false);  fit.subjects.push(ksa);
+let twa = new subject(1, "twa", "Tvorba webových aplikací", false);  fit.subjects.push(twa);
+let mpl = new subject(1, "mpl", "Manažerská psychologie", false);  fit.subjects.push(mpl);
+let vr1 = new subject(1, "vr1", "Virtuální realita 1", false);  fit.subjects.push(vr1);
+
+
+pa1.keywords = ["Datové typy", "Staticky a dynamicky alokované proměnné", "Spojové seznamy"]
+zma.keywords = ["Limita funkce","Derivace funkce", "Vyšetřování průběhu funkce"]
+lin.keywords = ["Systém lineárních rovnic", "Frobierova věta", "Gaussova eliminační metoda"]
+
+let kop = new subject(1, "kop", "Kombinatorická optimalizace", true); fit.subjects.push(kop);
+let mpi = new subject(1, "mpi", "Matematika pro informatiku", true);  fit.subjects.push(mpi);
+let adp = new subject(1, "adp", "Architektonické a návrhové vzory", true);  fit.subjects.push(adp);
+let am1 = new subject(1, "am1", "Architektura middleware 1", true); fit.subjects.push(am1);
+
+let pdp = new subject(2, "pdp", "Paralelní a distribuované programování", true);  fit.subjects.push(pdp);
+let vsm = new subject(2, "vsm", "Vybrané statistické metody", true);  fit.subjects.push(vsm);
+let fme = new subject(2, "fme", "Formální metody a specifikace", true); fit.subjects.push(fme);
+let nss = new subject(2, "nss", "Normalized Software Systems", true); fit.subjects.push(nss);
+let pis = new subject(2, "pis", "Podnikové informační systémy", true);  fit.subjects.push(pis);
+
+let nur = new subject(3, "nur", "Návrh uživatelského rozhraní", true);  fit.subjects.push(nur);
+let pds = new subject(3, "pds", "Pokročilé databázové systémy", true);  fit.subjects.push(pds);
+let tsw = new subject(3, "tsw", "Tvorba softwarových produktů", true);  fit.subjects.push(tsw);
+let aph = new subject(3, "aph", "Architektura počítačových her", true);  fit.subjects.push(aph);
+
+let bachelors = fit.subjects.filter(sub => sub.master == false)
+let master = fit.subjects.filter(sub => sub.master == true)
+
+
+bachelors.forEach(sub => {
+  let li = document.createElement("li");
+  li.innerHTML = "BI-" + sub.code.toUpperCase();
+  li.setAttribute("id", sub.code);
+  list.appendChild(li);
+})
+
+master.forEach(sub => {
+  let li = document.createElement("li");
+  li.innerHTML = "NI-" + sub.code.toUpperCase();
+  li.setAttribute("id", sub.code);
+  list.appendChild(li);
+})
+
+items = list.children.length;
+list.children[0].classList.add("selected");
+
+code = list.children[0].id
+keys = fit.subjects.filter(sub => sub.code == code);
+
+keywords.innerHTML = "<ul>";
+  keys[0].keywords.forEach(key => {
+    keywords.innerHTML += "<li>" + key + "</li>\n";
+  })
+keywords.innerHTML += "</ul>";
+
+</script>
+
+</body>
+</html>

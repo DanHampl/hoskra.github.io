@@ -1,0 +1,98 @@
+{
+  "bachelors": {
+    "about": "Webové a softwarové inženýrství, zaměření Počítačová grafika, 2015-2020",
+    "semester1": {
+      "pa1": {
+        "name": "Programování a algoritmizace 1",
+        "keywords": [
+          "Datové typy",
+          "Staticky a dynamicky alokované proměnné",
+          "Spojové seznamy"
+        ]
+      },
+      "zma": {
+        "name": "Základy matematické analýzy",
+        "keywords": [
+          "Limita funkce",
+          "Derivace funkce",
+          "Vyšetřování průběhu funkce"
+        ]
+      },
+      "mlo": { "name": "Matematická logika", "keywords": [] },
+      "cao": { "name": "Číslicové a analogové obvody", "keywords": [] },
+      "pai": { "name": "Právo a informatika", "keywords": [] },
+      "ps1": { "name": "Programování v shellu 1", "keywords": [] }
+    },
+    "semester2": {
+      "pa2": {
+        "name": "Programování a algoritmizace 1",
+        "keywords": [
+          "Datové typy",
+          "Staticky a dynamicky alokované proměnné",
+          "Spojové seznamy"
+        ]
+      },
+      "lin": {
+        "name": "Lineární algebra",
+        "keywords": [
+          "Systém lineárních rovnic",
+          "Frobierova věta",
+          "Gaussova eliminační metoda"
+        ]
+      },
+      "sap": { "name": "Struktura a architektura počítačů", "keywords": [] },
+      "dbs": { "name": "Databázové systémy", "keywords": [] },
+      "git": { "name": "Systém pro správu verzí Git", "keywords": [] }
+    },
+    "semester3": {
+      "aag": { "name": "Automaty a gramatiky", "keywords": [] },
+      "ag1": { "name": "Algoritmy a grafy 1", "keywords": [] },
+      "zdm": { "name": "Základy diskrétní matematiky", "keywords": [] },
+      "mga": { "name": "Multimediální a grafické aplikace", "keywords": [] },
+      "pyt": { "name": "Programování v Pythonu", "keywords": [] }
+    },
+    "semester4": {
+      "si1": { "name": "Softwarové inženýrství I", "keywords": [] },
+      "osy": { "name": "Operační systémy", "keywords": [] },
+      "psi": { "name": "Počítačové sítěy", "keywords": [] },
+      "bez": { "name": "Bezpečnost", "keywords": [] },
+      "pgr": { "name": "Počítačová grafika", "keywords": [] },
+      "tur": { "name": "Tvorba uživatelského rozhraní", "keywords": [] }
+    },
+    "semester5": {
+      "pst": { "name": "Pravděpodobnost a statistika", "keywords": [] },
+      "pga": { "name": "Programování grafických aplikací", "keywords": [] },
+      "emp": { "name": "Ekonomické a manažerské principy", "keywords": [] }
+    },
+    "semester6": {
+      "dpr": { "name": "Dokumentace, prezentace, rétorika", "keywords": [] }
+    }
+  },
+  "masters": {
+    "about": "Mgr. specializace Softwarové inženýrství, 2020",
+    "semester1": {
+      "vhs": { "name": "Virtuální herní světy", "keywords": [] },
+      "adp": { "name": "Architektonické a návrhové vzory", "keywords": [] },
+      "am1": { "name": "Architektura middleware 1", "keywords": [] },
+      "cap": { "name": "Člověk v antropologických perspektivách", "keywords": [] },
+      "ccc": { "name": "Kreativní programování", "keywords": [] },
+      "kop": { "name": "Kombinatorická optimalizace", "keywords": [] },
+      "mpi": { "name": "Matematika pro informatiku", "keywords": [] }
+    },
+    "semester2": {
+      "vsm": { "name": "Vybrané statistické metody", "keywords": [] },
+      "vem": { "name": "Vědecké myšlení", "keywords": [] },
+      "pis": { "name": "Podnikové informační systémy", "keywords": [] },
+      "pdp": { "name": "Paralelní a distribuované programování", "keywords": [] },
+      "nss": { "name": "Normalized Software Systems", "keywords": [] },
+      "lng": { "name": "Úvod do lingvistiky pro informatiky", "keywords": [] },
+      "fme": { "name": "Formální metody a specifikace", "keywords": [] }
+    },
+    "semester3": {
+      "tsw": { "name": "Tvorba softwarových produktů", "keywords": [] },
+      "pdb": { "name": "Pokročilé databázové systémy", "keywords": [] },
+      "nur": { "name": "Návrh uživatelského rozhraní", "keywords": [] },
+      "aph": { "name": "Architektura počítačových her", "keywords": [] }
+    }
+  }
+}
