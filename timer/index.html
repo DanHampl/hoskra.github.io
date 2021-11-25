@@ -18,15 +18,41 @@
     width: 100vw;
     background-color: black;
   }
-  #time {
+  * {
     font-family: monospace;
     color: white;
     font-size: xx-large;
   }
+  a {
+    padding-bottom: 1em;
+    font-size: large;
+    position:absolute;
+    bottom:0;
+    text-align: center;
+    text-decoration: underline;
+    font-family: monospace;
+    letter-spacing: 5px;
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
 </style>
 
 <body>
-  <span id="time"></span>
+    <span id="time"></span>
+    <a href="+.html">more</a>
 <script>
 
 const finaleDate = new Date("May 05, 2022 00:00:00");

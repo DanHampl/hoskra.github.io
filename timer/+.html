@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timer</title>
+  <meta name="description" content="Countdown">
+  <meta name="author" content="hoskra">
+
+</head>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  * {
+    font-family: monospace;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1em;
+  }
+  .info { text-align: left; }
+  .count {  text-align: right; }
+  .divider {
+    text-align: left;
+    margin: 2em 0;
+  }
+  .time-container {
+    display: flex;
+    height: 2em;
+    width: 100%;
+  }
+  #time {
+    text-align: center;
+    font-size: xxx-large;
+
+  }
+  .name {
+    letter-spacing: 5px;
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+  }
+  @keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+</style>
+
+<body>
+  <div class="container">
+
+    <span class="divider">Time left:</span>
+
+    <div class="time-container">
+      <span class="count" id="time"></span>
+    </div>
+
+    <span class="divider">... that means:</span>
+
+    <div class="items">
+      <span class="count" id="days"></span>
+      <span class="info"> days</span>
+      <span class="count" id="week"></span>
+      <span class="info"> weeks</span>
+    </div>
+
+    <span class="divider">... in that time you could watch:</span>
+
+    <div class="items">
+      <span class="count" id="friends"></span>
+      <span class="info">x all episodes of <span class="name">Friends</span></span>
+      <span class="count" id="sg1"></span>
+      <span class="info">x all episodes of <span class="name">SG1</span></span>
+      <span class="count" id="reddwarf"></span>
+      <span class="info">x first 8 episodes episodes of <span class="name">Red Dwarf</span></span>
+      <span class="count" id="starwars"></span>
+      <span class="info">x episodes I. - VIII. of <span class="name">Star Wars</span></span>
+      <span class="count" id="lotr"></span>
+      <span class="info">x all <span class="name">LOTR movies</span></span>
+    </div>
+
+
+
+  </div>
+<script>
+
+const finaleDate = new Date("May 05, 2022 00:00:00");
+let totalMinutes;
+let totalDays;
+let totalWeeks;
+
+const timer = () =>{
+  let now = new Date();
+  let diff = finaleDate - now;
+  let d = new Date(diff);
+
+  let month   = d.getMonth();
+  let days    = d.getDate();
+  let hours   = d.getHours();
+  let minutes = d.getMinutes();
+  let seconds = d.getSeconds();
+
+  totalDays = month * 30 + days + hours / 24 + minutes / 60 / 24 + seconds / 60 / 60 / 24;
+  totalWeeks = totalDays / 7;
+  totalMinutes = totalDays * 60;
+
+  month   = month ? month + "M " : "";
+  days    = days ? days + "D " : "";
+  hours   = hours ? hours + "H " : "";
+  minutes = minutes ? minutes + "m " : "";
+  seconds = seconds ? seconds + "s " : "";
+
+  n = month + days + hours + minutes + seconds;
+
+  document.getElementById('time').textContent = n;
+  document.getElementById('days').textContent = totalDays.toFixed(2);
+  document.getElementById('week').textContent = totalWeeks.toFixed(2);
+
+
+  let friends = 236 * 30;
+  let sg1 = 212 * 60;
+  let reddwarf = 52 * 30;
+  let starwars = 796;
+  let lotr = 404;
+
+  friends = totalMinutes / friends;
+  sg1 = totalMinutes / sg1;
+  reddwarf = totalMinutes / reddwarf;
+
+  friends = friends.toFixed(2);
+  sg1 = sg1.toFixed(2);
+  reddwarf = reddwarf.toFixed(2);
+  starwars = starwars.toFixed(2);
+  lotr = lotr.toFixed(2);
+
+  document.getElementById('friends').textContent = friends;
+  document.getElementById('sg1').textContent = sg1;
+  document.getElementById('reddwarf').textContent = reddwarf;
+  document.getElementById('starwars').textContent = starwars;
+  document.getElementById('lotr').textContent = lotr;
+}
+
+timer();
+setInterval(timer,1000);
+
+console.log("Final date is set to May 05, 2022 00:00:00.")
+
+</script>
+</body>
+</html>
