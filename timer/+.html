@@ -127,11 +127,11 @@ const timer = () =>{
   totalWeeks = totalDays / 7;
   totalMinutes = totalDays * 60;
 
-  month   = month ? month + "M " : "";
-  days    = days ? days + "D " : "";
-  hours   = hours ? hours + "H " : "";
-  minutes = minutes ? minutes + "m " : "";
-  seconds = seconds ? seconds + "s " : "";
+  month   = month ? ( month +"M " ) : "";
+  days    = month ? ( days < 10 ? "0" + days + "D " : days +"D " ) : "";
+  hours   = month ? ( hours < 10 ? "0" + hours + "H " : hours +"H " ) : "";
+  minutes = month ? ( minutes < 10 ? "0" + minutes + "m " : minutes +"m " ) : "";
+  seconds = month ? ( seconds < 10 ? "0" + seconds + "s " : seconds +"s " ) : "";
 
   n = month + days + hours + minutes + seconds;
 
