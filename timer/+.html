@@ -81,6 +81,8 @@
     <span class="divider">... that means:</span>
 
     <div class="items">
+      <span class="count" id="minutes"></span>
+      <span class="info"> minutes</span>
       <span class="count" id="days"></span>
       <span class="info"> days</span>
       <span class="count" id="week"></span>
@@ -136,6 +138,7 @@ const timer = () =>{
   n = month + days + hours + minutes + seconds;
 
   document.getElementById('time').textContent = n;
+  document.getElementById('minutes').textContent = totalMinutes.toFixed(2);
   document.getElementById('days').textContent = totalDays.toFixed(2);
   document.getElementById('week').textContent = totalWeeks.toFixed(2);
 
