@@ -1,0 +1,245 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>easily explained</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="icon" href="../ico.png">
+  <link rel="stylesheet" href="../global.css">
+  <style>
+  *{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+  }
+  body{
+      background-color: #111111;
+  }
+  a {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 4px;
+  }
+
+  dl{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  dd{
+    background-color: white;
+    padding-bottom: 5px;
+    margin-left: 15px;
+  }
+
+  dt{
+    background-color: white;
+    word-break: break-all;
+    font-weight: bold;
+    margin: 15px;
+  }
+
+  div{
+    background-color: white;
+    width: 250px;
+    margin: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 200px;
+  }
+
+  a:visited{
+    color: #3700de;
+  }
+
+  .highlight{
+    background-color:#a0fff4;
+  }
+
+  .highlight dt{
+    background-color:#a0fff4;
+  }
+
+  .highlight dd{
+    background-color:#a0fff4;
+  }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+h1,h2,h3{color:white}
+h1{text-align: right;}
+  </style>
+</head>
+<body>
+
+<h1>easily explained</h1>
+
+<h2>web</h2>
+<dl id="id00"></dl>
+
+<h2>database</h2>
+
+<dl id="id01"></dl>
+
+<script>
+
+let webDiv = document.getElementById("id00");
+let webData = [
+  { "caption" : "DOM" ,
+  "content" : "Document Object Model (DOM) represents the content of xml of html document as tree structure",
+  "highlighted" : true },
+  { "caption" : "Asynchronicity",
+  "content" : "Asynchronous communication is a method of exchanging messages between two or more parties in which each party receives and processes messages whenever it's convenient or possible to do so, rather than doing so immediately upon receipt.",
+  "highlighted" : false },
+  { "caption" : "BEM",
+  "content" : "BEM (Block — Element — Modifier) is a way of naming classes so all classes are unique, which eliminates the issue of overriding the rules.",
+  "highlighted" : false },
+  { "caption" : "Flow",
+  "content" : "Flow is a static type checker for javascript. Files has '.js' extension.",
+  "highlighted" : false },
+  { "caption" : "DOM",
+  "content" : "Document Object Model (DOM) represents the content of xml of html document as tree structure",
+  "highlighted" : false },
+  { "caption" : "REST",
+  "content" : "software architectural style",
+  "highlighted" : false },
+  { "caption" : "RESTful",
+  "content" : "A web API that obeys the REST constraints",
+  "highlighted" : false },
+  { "caption" : "HTTP",
+  "content" : "application layer protocol in the Internet protocol suite(commonly known as TCP/IP, is the set of communications protocols Methods: GET, PUT, POST, DELETE, ...",
+  "highlighted" : false },
+  { "caption" : "DNS",
+  "content" : "hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network",
+  "highlighted" : false },
+  { "caption" : "HATEOAS",
+  "content" : "application state determined by URL",
+  "highlighted" : false },
+  { "caption" : "WebSocket",
+  "content" : "The WebSocket object provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.",
+  "highlighted" : false },
+]
+
+let databaseDiv = document.getElementById("id01");
+let databaseData = [
+  { "caption" : "ACID",
+  "content" : "set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps",
+  "highlighted" : true },
+  { "caption" : "ACID - Atomicity",
+  "content" : "Atomicity guarantees that each transaction is treated as a single 'unit', which either succeeds completely, or fails completely.",
+  "highlighted" : false },
+  { "caption" : "ACID - Consistency (Correctness)",
+  "content" : "Consistency ensures that a transaction can only bring the database from one valid state to another, maintaining database invariants.",
+  "highlighted" : false },
+  { "caption" : "ACID - Isolation",
+  "content" : "Transactions are often executed concurrently. Isolation ensures that concurrent execution of transactions leaves the database in the same state that would have been obtained if the transactions were executed sequentially.",
+  "highlighted" : false },
+  { "caption" : "ACID - Durability",
+  "content" : "Durability guarantees that once a transaction has been committed, it will remain committed even in the case of a system failure.",
+  "highlighted" : false },
+  { "caption" : "Transaction",
+  "content" : "a sequence of logically related actions, that is changing a database state - for example sending X money from A to B (A-=X, B+=X, commit)",
+  "highlighted" : true },
+]
+
+webData.forEach(sub => {
+  let item = document.createElement("div");
+  if(sub.highlighted) item.setAttribute("class", "highlight");
+  item.innerHTML = "<dt>" + sub.caption + "</dt><dd>" + sub.content + "</dd>";
+  webDiv.appendChild(item);
+})
+
+databaseData.forEach(sub => {
+  let item = document.createElement("div");
+  if(sub.highlighted) item.setAttribute("class", "highlight");
+  item.innerHTML = "<dt>" + sub.caption + "</dt><dd>" + sub.content + "</dd>";
+  databaseDiv.appendChild(item);
+})
+
+
+
+function sortList(id) {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById(id);
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByTagName("div");
+    // Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      // start by saying there should be no switching:
+      shouldSwitch = false;
+      /* check if the next item should
+      switch place with the current item: */
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        /* if next item is alphabetically
+        lower than current item, mark as a switch
+        and break the loop: */
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark the switch as done: */
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+
+let lists = ["id00", "id01"];
+
+for (i = 0; i < lists.length; i++){
+	sortList(lists[i]);
+}
+
+function search(what){
+  var words = what.split(" ");
+  let all;
+  for (let i = 0; i < words.length; i++){
+    all += words[i] + "+";
+  }
+  all = all.replace("undefined","");
+
+  let url = "https://www.google.com/search?q=" + all;
+  return url;
+}
+
+
+let dt = document.getElementsByTagName("dt");
+
+for (let x of dt){
+  var a = document.createElement("a");
+  what = x.innerHTML;
+  a.innerHTML = ' [↗]';
+  // a.innerHTML = '<span class="google-link" [↗]</span>';
+  a.setAttribute("style", "text-decoration:none; background-color: transparent ");
+  a.setAttribute('target', "_blank");
+  a.setAttribute('href',search(what));
+  x.appendChild(a);
+}
+
+
+
+</script>
+</body>
+</html>
