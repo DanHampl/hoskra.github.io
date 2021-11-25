@@ -127,7 +127,7 @@ const timer = () =>{
 
   totalDays = month * 30 + days + hours / 24 + minutes / 60 / 24 + seconds / 60 / 60 / 24;
   totalWeeks = totalDays / 7;
-  totalMinutes = totalDays * 60;
+  totalMinutes = totalDays * 24 * 60;
 
   month   = month ? ( month +"M " ) : "";
   days    = month ? ( days < 10 ? "0" + days + "D " : days +"D " ) : "";
@@ -144,7 +144,7 @@ const timer = () =>{
 
 
   let friends = 236 * 30;
-  let sg1 = 212 * 60;
+  let sg1 = 214 * 44;
   let reddwarf = 52 * 30;
   let starwars = 796;
   let lotr = 404;
